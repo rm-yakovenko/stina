@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/stina/static/js/main.a37c1b2c.chunk.js",
+    "main.js.map": "/stina/static/js/main.a37c1b2c.chunk.js.map",
+    "runtime-main.js": "/stina/static/js/runtime-main.da7f9223.js",
+    "runtime-main.js.map": "/stina/static/js/runtime-main.da7f9223.js.map",
+    "static/js/2.5a2ef7da.chunk.js": "/stina/static/js/2.5a2ef7da.chunk.js",
+    "static/js/2.5a2ef7da.chunk.js.map": "/stina/static/js/2.5a2ef7da.chunk.js.map",
+    "static/js/3.ad509b3b.chunk.js": "/stina/static/js/3.ad509b3b.chunk.js",
+    "static/js/3.ad509b3b.chunk.js.map": "/stina/static/js/3.ad509b3b.chunk.js.map",
+    "index.html": "/stina/index.html",
+    "static/js/2.5a2ef7da.chunk.js.LICENSE.txt": "/stina/static/js/2.5a2ef7da.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.da7f9223.js",
+    "static/js/2.5a2ef7da.chunk.js",
+    "static/js/main.a37c1b2c.chunk.js"
+  ]
+}
