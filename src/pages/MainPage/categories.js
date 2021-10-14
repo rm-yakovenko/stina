@@ -1,58 +1,77 @@
 import breadImage from 'assets/bread.png';
+import * as colors from 'theme/colors';
 
 export const categories = [
   {
     id: 1,
+    name: 'Харчування/Гастрономія',
     nameFirs: 'Харчування',
     nameSecond: 'Гастрономія',
     image: breadImage,
+    color: colors.Mauvelous,
   },
   {
     id: 2,
+    name: 'Розміщення/Житло',
     nameFirs: 'Розміщення',
     nameSecond: 'Житло',
     image: breadImage,
+    color: colors.PiggyPink,
   },
   {
     id: 3,
+    name: 'Місцевий продукт',
     nameFirs: 'Місцевий',
     nameSecond: 'продукт',
     image: breadImage,
+    color: colors.VividBlue,
   },
   {
     id: 4,
+    name: 'Волонтерство/навчання',
     nameFirs: 'Волонтерство',
     nameSecond: 'навчання',
     image: breadImage,
+    color: colors.GreenSheen,
   },
   {
     id: 5,
+    name: 'Активний відпочинок',
     nameFirs: 'Активний',
     nameSecond: 'відпочинок',
     image: breadImage,
+    color: colors.Mantis,
   },
   {
     id: 6,
+    name: 'Майстер-класи/Ремесла',
     nameFirs: 'Майстер-класи',
     nameSecond: 'Ремесла',
     image: breadImage,
+    color: colors.MintGreen,
   },
   {
     id: 7,
+    name: 'Комплексні тури',
     nameFirs: 'Комплексні',
     nameSecond: 'тури',
     image: breadImage,
+    color: colors.CadetGrey,
   },
   {
     id: 8,
+    name: 'Місцеві цікавинки',
     nameFirs: 'Місцеві',
     nameSecond: 'цікавинки',
     image: breadImage,
+    color: colors.SpanishViolet,
   },
   {
     id: 9,
+    name: 'Особливі пропозиції',
     nameFirs: 'Особливі',
     nameSecond: 'пропозиції',
     image: breadImage,
+    color: colors.DarkPurple,
   },
 ];

@@ -23,6 +23,9 @@
 		"no-unused-vars":"warn",
 		"import/no-unresolved":"off",
 		"import/prefer-default-export": "off",
-		"spaced-comment":"warn"
+		"spaced-comment":"warn",
+		"react/jsx-props-no-spreading": "off",
+		"react/jsx-no-duplicate-props": "off",
+		"no-param-reassign": "off"
 	}
 }

@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation } from 'swiper';
+import arrowImage from 'assets/arrow.png';
 import { videos } from './videoUrls';
-import { CategoryImage, StyledSwiperSlide } from './style';
+import {
+  VideoImage,
+  StyledSwiperSlide,
+  SliderPrev,
+  SliderNext,
+  SwiperContainer,
+  ArrowImageLeft,
+  ArrowImageRight,
+} from './style';
 
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
-
-SwiperCore.use([Navigation]);
 
 const extractYoutubeVideoId = (url) => {
   if (url.includes('youtu.be')) {
@@ -26,16 +32,32 @@ const getVideoPreviewImg = (url) => {
 };
 
 function VideosSlider() {
+  const swiperRef = useRef(null);
+
   return (
-    <Swiper loop slidesPerView={4} navigation>
-      {videos.map((video) => (
-        <SwiperSlide>
-          <StyledSwiperSlide>
-            <CategoryImage src={getVideoPreviewImg(video)} />
-          </StyledSwiperSlide>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <SwiperContainer>
+      <Swiper loop slidesPerView={4} ref={swiperRef}>
+        {videos.map((video) => (
+          <SwiperSlide>
+            <StyledSwiperSlide>
+              <VideoImage src={getVideoPreviewImg(video)} />
+            </StyledSwiperSlide>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      <SliderPrev>
+        <ArrowImageLeft
+          src={arrowImage}
+          onClick={() => swiperRef.current.swiper.slidePrev()}
+        />
+      </SliderPrev>
+      <SliderNext>
+        <ArrowImageRight
+          src={arrowImage}
+          onClick={() => swiperRef.current.swiper.slideNext()}
+        />
+      </SliderNext>
+    </SwiperContainer>
   );
 }
 

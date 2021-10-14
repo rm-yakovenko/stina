@@ -1,0 +1,1 @@
+export { MapCategoryButton } from './style';
