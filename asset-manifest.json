@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/stina/static/css/main.4bcfd9d0.chunk.css",
-    "main.js": "/stina/static/js/main.cfe1476e.chunk.js",
-    "main.js.map": "/stina/static/js/main.cfe1476e.chunk.js.map",
-    "runtime-main.js": "/stina/static/js/runtime-main.30889912.js",
-    "runtime-main.js.map": "/stina/static/js/runtime-main.30889912.js.map",
+    "main.js": "/stina/static/js/main.5e292bf5.chunk.js",
+    "main.js.map": "/stina/static/js/main.5e292bf5.chunk.js.map",
+    "runtime-main.js": "/stina/static/js/runtime-main.fc1ae8bd.js",
+    "runtime-main.js.map": "/stina/static/js/runtime-main.fc1ae8bd.js.map",
     "static/css/2.e6a755d0.chunk.css": "/stina/static/css/2.e6a755d0.chunk.css",
-    "static/js/2.149cba96.chunk.js": "/stina/static/js/2.149cba96.chunk.js",
-    "static/js/2.149cba96.chunk.js.map": "/stina/static/js/2.149cba96.chunk.js.map",
-    "static/js/3.bf299c35.chunk.js": "/stina/static/js/3.bf299c35.chunk.js",
-    "static/js/3.bf299c35.chunk.js.map": "/stina/static/js/3.bf299c35.chunk.js.map",
+    "static/js/2.fba28876.chunk.js": "/stina/static/js/2.fba28876.chunk.js",
+    "static/js/2.fba28876.chunk.js.map": "/stina/static/js/2.fba28876.chunk.js.map",
+    "static/js/3.9dc066e2.chunk.js": "/stina/static/js/3.9dc066e2.chunk.js",
+    "static/js/3.9dc066e2.chunk.js.map": "/stina/static/js/3.9dc066e2.chunk.js.map",
     "index.html": "/stina/index.html",
     "static/css/2.e6a755d0.chunk.css.map": "/stina/static/css/2.e6a755d0.chunk.css.map",
     "static/css/main.4bcfd9d0.chunk.css.map": "/stina/static/css/main.4bcfd9d0.chunk.css.map",
-    "static/js/2.149cba96.chunk.js.LICENSE.txt": "/stina/static/js/2.149cba96.chunk.js.LICENSE.txt",
+    "static/js/2.fba28876.chunk.js.LICENSE.txt": "/stina/static/js/2.fba28876.chunk.js.LICENSE.txt",
     "static/media/bread.dd96223b.png": "/stina/static/media/bread.dd96223b.png",
     "static/media/chirch.940dbf67.png": "/stina/static/media/chirch.940dbf67.png",
     "static/media/embrodery.bbb8971c.png": "/stina/static/media/embrodery.bbb8971c.png",
@@ -22,10 +22,10 @@
     "static/media/pangeya.923dcc6b.png": "/stina/static/media/pangeya.923dcc6b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.30889912.js",
+    "static/js/runtime-main.fc1ae8bd.js",
     "static/css/2.e6a755d0.chunk.css",
-    "static/js/2.149cba96.chunk.js",
+    "static/js/2.fba28876.chunk.js",
     "static/css/main.4bcfd9d0.chunk.css",
-    "static/js/main.cfe1476e.chunk.js"
+    "static/js/main.5e292bf5.chunk.js"
   ]
 }
