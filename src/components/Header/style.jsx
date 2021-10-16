@@ -9,15 +9,16 @@ export const HeaderContainer = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  height: 90px;
+  height: ${(props) => (props.isScrolling ? '80px' : '90px')};
   background-color: ${colors.lightBlue};
   box-shadow: 0 5px 5px grey;
   z-index: 100;
+  transition: all 0.4s;
 `;
 
 export const LogoContainer = styled.div`
   position: fixed;
-  top: 10px;
+  top: ${(props) => (props.isScrolling ? '-18px' : '10px')};
   left: 50%;
   transform: translateX(-50%);
   width: 120px;
@@ -25,13 +26,15 @@ export const LogoContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: ${(props) => (props.isScrolling ? 'transparent' : 'white')};
   border-radius: 50%;
+  transition: all 0.4s;
 `;
 
 export const LogoImage = styled.img`
-  width: 47%;
+  width: ${(props) => (props.isScrolling ? '30%' : '47%')};
   height: auto;
+  transition: all 0.4s;
 `;
 
 export const LinksContainer = styled.div`

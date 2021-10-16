@@ -11,6 +11,7 @@ import { HeadingH6, Body1 } from 'components/Typography';
 import Footer from 'components/Footer';
 import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
+import Map from './Map';
 import { categories } from './categories';
 import {
   MainPageContainer,
@@ -28,6 +29,7 @@ import {
   MapCategoryItem,
   StyledLocationIcon,
   VideoSliderContainer,
+  MapBoxCoverInfo,
 } from './style';
 
 const heroText = `В далекому минулому, ще
@@ -72,7 +74,10 @@ function MainPage() {
         </LeftSideTextContent>
       </ImageContainer>
       <MapContainer>
-        <StyledMap>Map</StyledMap>
+        <StyledMap>
+          <Map />
+          <MapBoxCoverInfo />
+        </StyledMap>
         <MapCategoriesContainer>
           {categories.map((category) => (
             <MapCategoryItem key={category.id}>

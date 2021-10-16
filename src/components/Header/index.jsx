@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from 'assets/logo.png';
 import { HeadingLinks } from 'components/Typography';
 import {
@@ -10,10 +10,23 @@ import {
 } from './style';
 
 function Header() {
+  const [isScrolling, setScrolling] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 100 && !isScrolling) {
+      setScrolling(true);
+    }
+
+    if (window.scrollY <= 100 && isScrolling) {
+      setScrolling(false);
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
   return (
-    <HeaderContainer>
-      <LogoContainer>
-        <LogoImage src={logo} />
+    <HeaderContainer isScrolling={isScrolling}>
+      <LogoContainer isScrolling={isScrolling}>
+        <LogoImage src={logo} isScrolling={isScrolling} />
       </LogoContainer>
       <LinksContainer>
         <StyledLink>

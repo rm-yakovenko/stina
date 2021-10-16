@@ -17,7 +17,7 @@ export const HeroTextContent = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 90px;
+  top: 80px;
   right: 0;
   bottom: 100px;
   width: 30%;
@@ -93,7 +93,7 @@ export const StyledSwiperSlide = styled.div`
 
 export const StyledSwiperVideoSlide = styled.div`
   width: 100%;
-  height: 350px;
+  height: 38vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,7 +129,10 @@ export const MapCategoriesContainer = styled.div`
 `;
 
 export const StyledMap = styled.div`
+  position: relative;
   width: 70%;
+  padding: 30px;
+  padding-bottom: 40px;
 `;
 
 export const MapCategoryItem = styled.div`
@@ -210,4 +213,18 @@ export const CategoryLine = styled.div`
   width: 80%;
   background-color: ${(props) => (props.isHover ? 'grey' : 'transparent')};
   transition: ${(props) => (props.isHover ? 'all .1s .4s' : 'all .1s')};
+`;
+
+export const MapBoxContainer = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+export const MapBoxCoverInfo = styled.div`
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 5%;
+  background-color: white;
 `;
