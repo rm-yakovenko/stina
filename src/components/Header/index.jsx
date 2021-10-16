@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from 'assets/logo.png';
-import { HeadingH6 } from 'components/Typography';
+import { HeadingLinks } from 'components/Typography';
 import {
   HeaderContainer,
   LogoContainer,
@@ -17,13 +17,13 @@ function Header() {
       </LogoContainer>
       <LinksContainer>
         <StyledLink>
-          <HeadingH6>ЕКО-ЦЕНТР</HeadingH6>
+          <HeadingLinks>ЕКО-ЦЕНТР</HeadingLinks>
         </StyledLink>
         <StyledLink>
-          <HeadingH6>ЯК ДОЇХАТИ</HeadingH6>
+          <HeadingLinks>ЯК ДОЇХАТИ</HeadingLinks>
         </StyledLink>
         <StyledLink>
-          <HeadingH6>ЩО ТУТ РОБИТИ</HeadingH6>
+          <HeadingLinks>ЩО ТУТ РОБИТИ</HeadingLinks>
         </StyledLink>
       </LinksContainer>
     </HeaderContainer>

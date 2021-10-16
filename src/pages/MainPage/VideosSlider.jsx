@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import arrowImage from 'assets/arrow.png';
 import { videos } from './videoUrls';
 import {
   VideoImage,
-  StyledSwiperSlide,
+  StyledSwiperVideoSlide,
   SliderPrev,
   SliderNext,
   SwiperContainer,
@@ -33,15 +33,22 @@ const getVideoPreviewImg = (url) => {
 
 function VideosSlider() {
   const swiperRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(null);
 
   return (
     <SwiperContainer>
       <Swiper loop slidesPerView={4} ref={swiperRef}>
         {videos.map((video) => (
           <SwiperSlide>
-            <StyledSwiperSlide>
-              <VideoImage src={getVideoPreviewImg(video)} />
-            </StyledSwiperSlide>
+            <StyledSwiperVideoSlide
+              onMouseEnter={() => setCurrentSlide(video.id)}
+              onMouseLeave={() => setCurrentSlide(null)}
+            >
+              <VideoImage
+                src={getVideoPreviewImg(video.url)}
+                isHover={currentSlide === video.id}
+              />
+            </StyledSwiperVideoSlide>
           </SwiperSlide>
         ))}
       </Swiper>

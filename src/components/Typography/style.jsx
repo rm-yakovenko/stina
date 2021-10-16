@@ -26,6 +26,10 @@ export const HeadingH6 = styled((props) => (
   <Typography variant="h6" {...props} />
 ))``;
 
+export const HeadingLinks = styled(Typography)`
+  font-size: 18px !important;
+`;
+
 export const Subtitle1 = styled((props) => (
   <Typography variant="subtitle1" {...props} />
 ))``;

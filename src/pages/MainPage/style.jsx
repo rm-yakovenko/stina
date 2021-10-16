@@ -55,11 +55,17 @@ export const CategoriesSliderContainer = styled.div`
   box-shadow: 0 15px 15px black;
 `;
 
-export const CategoryImage = styled.img``;
+export const CategoryImage = styled.img`
+  width: 80%;
+  height: auto;
+`;
 
 export const VideoImage = styled.img`
-  width: 450px;
+  width: 90%;
   height: auto;
+  transform: ${(props) =>
+    props.isHover ? 'scale(1.1) rotate(0.02deg)' : 'scale(1)'};
+  transition: all 0.5s;
 `;
 
 export const ArrowImageLeft = styled.img`
@@ -82,6 +88,16 @@ export const StyledSwiperSlide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+`;
+
+export const StyledSwiperVideoSlide = styled.div`
+  width: 100%;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 `;
 
 export const LeftSideTextContent = styled.div`
@@ -159,4 +175,39 @@ export const SliderNext = styled.div`
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 10;
+`;
+
+export const CategoryNameTop = styled.div`
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: ${(props) => (props.isHover ? '50%' : '0%')};
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  transition: height 0.5s;
+`;
+
+export const CategoryNameBottom = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  height: ${(props) => (props.isHover ? '50%' : '0%')};
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transition: height 0.5s;
+`;
+
+export const CategoryLine = styled.div`
+  position: absolute;
+  bottom: 50%;
+  height: 1px;
+  width: 80%;
+  background-color: ${(props) => (props.isHover ? 'grey' : 'transparent')};
+  transition: ${(props) => (props.isHover ? 'all .1s .4s' : 'all .1s')};
 `;

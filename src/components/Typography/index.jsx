@@ -5,6 +5,7 @@ export {
   HeadingH4,
   HeadingH5,
   HeadingH6,
+  HeadingLinks,
   Subtitle1,
   Subtitle2,
   Body1,

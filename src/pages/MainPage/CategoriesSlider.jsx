@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { HeadingH5 } from 'components/Typography';
 import arrowImage from 'assets/arrow.png';
 import { categories } from './categories';
 
@@ -11,6 +12,9 @@ import {
   SwiperContainer,
   ArrowImageLeft,
   ArrowImageRight,
+  CategoryNameTop,
+  CategoryNameBottom,
+  CategoryLine,
 } from './style';
 
 import 'swiper/swiper-bundle.min.css';
@@ -18,14 +22,25 @@ import 'swiper/swiper.min.css';
 
 function CategoriesSlider() {
   const swiperRef = useRef(null);
+  const [currentSlide, setCurrentSlide] = useState(null);
 
   return (
     <SwiperContainer>
       <Swiper loop slidesPerView={5} ref={swiperRef}>
-        {categories.map((categorie) => (
-          <SwiperSlide key={categorie.id}>
-            <StyledSwiperSlide>
-              <CategoryImage src={categorie.image} />
+        {categories.map((category) => (
+          <SwiperSlide key={category.id}>
+            <StyledSwiperSlide
+              onMouseEnter={() => setCurrentSlide(category.id)}
+              onMouseLeave={() => setCurrentSlide(null)}
+            >
+              <CategoryNameTop isHover={currentSlide === category.id}>
+                <HeadingH5>{category.nameFirs}</HeadingH5>
+              </CategoryNameTop>
+              <CategoryImage src={category.image} />
+              <CategoryLine isHover={currentSlide === category.id} />
+              <CategoryNameBottom isHover={currentSlide === category.id}>
+                <HeadingH5>{category.nameSecond}</HeadingH5>
+              </CategoryNameBottom>
             </StyledSwiperSlide>
           </SwiperSlide>
         ))}
