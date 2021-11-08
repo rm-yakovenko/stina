@@ -12,7 +12,6 @@ import Footer from 'components/Footer';
 import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
 import Map from './Map';
-import { categories } from './categories';
 import { categoriesMap } from './categoriesMap';
 import {
   MainPageContainer,
