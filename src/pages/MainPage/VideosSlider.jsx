@@ -1,5 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import YouTubeModal from 'components/YouTubeModal';
+import { extractYoutubeVideoId } from 'helpers/videoHelpers';
 import arrowImage from 'assets/arrow.png';
 import { videos } from './videoUrls';
 import {
@@ -10,21 +12,11 @@ import {
   SwiperContainer,
   ArrowImageLeft,
   ArrowImageRight,
+  StyledYouTubeIcon,
 } from './style';
 
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
-
-const extractYoutubeVideoId = (url) => {
-  if (url.includes('youtu.be')) {
-    const idIndex = url.lastIndexOf('/');
-    return url.substr(idIndex + 1, url.length);
-  }
-  const queryParamsIndex = url.indexOf('?');
-  const searchParams = url.substring(queryParamsIndex + 1);
-  const urlParams = new URLSearchParams(searchParams);
-  return urlParams.get('v');
-};
 
 const getVideoPreviewImg = (url) => {
   const id = extractYoutubeVideoId(url);
@@ -35,36 +27,51 @@ function VideosSlider() {
   const swiperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(null);
 
+  const [isYouTubeModalOpen, setYouTubeModalOpen] = useState(false);
+
+  const toggleYuuTubeModal = () => {
+    setYouTubeModalOpen(!isYouTubeModalOpen);
+  };
+
   return (
-    <SwiperContainer>
-      <Swiper loop slidesPerView={4} ref={swiperRef}>
-        {videos.map((video) => (
-          <SwiperSlide>
-            <StyledSwiperVideoSlide
-              onMouseEnter={() => setCurrentSlide(video.id)}
-              onMouseLeave={() => setCurrentSlide(null)}
-            >
-              <VideoImage
-                src={getVideoPreviewImg(video.url)}
-                isHover={currentSlide === video.id}
-              />
-            </StyledSwiperVideoSlide>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-      <SliderPrev>
-        <ArrowImageLeft
-          src={arrowImage}
-          onClick={() => swiperRef.current.swiper.slidePrev()}
-        />
-      </SliderPrev>
-      <SliderNext>
-        <ArrowImageRight
-          src={arrowImage}
-          onClick={() => swiperRef.current.swiper.slideNext()}
-        />
-      </SliderNext>
-    </SwiperContainer>
+    <>
+      <SwiperContainer>
+        <Swiper loop slidesPerView={4} ref={swiperRef}>
+          {videos.map((video) => (
+            <SwiperSlide>
+              <StyledSwiperVideoSlide
+                onMouseEnter={() => setCurrentSlide(video)}
+                onMouseLeave={() => setCurrentSlide(null)}
+                onClick={toggleYuuTubeModal}
+              >
+                <VideoImage
+                  src={getVideoPreviewImg(video.url)}
+                  isHover={currentSlide?.id === video.id}
+                />
+                <StyledYouTubeIcon style={{ fontSize: 100 }} />
+              </StyledSwiperVideoSlide>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <SliderPrev>
+          <ArrowImageLeft
+            src={arrowImage}
+            onClick={() => swiperRef.current.swiper.slidePrev()}
+          />
+        </SliderPrev>
+        <SliderNext>
+          <ArrowImageRight
+            src={arrowImage}
+            onClick={() => swiperRef.current.swiper.slideNext()}
+          />
+        </SliderNext>
+      </SwiperContainer>
+      <YouTubeModal
+        open={isYouTubeModalOpen}
+        onClose={toggleYuuTubeModal}
+        currentVideo={currentSlide}
+      />
+    </>
   );
 }
 

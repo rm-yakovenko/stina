@@ -34,6 +34,7 @@ export const LogoContainer = styled.div`
 export const LogoImage = styled.img`
   width: ${(props) => (props.isScrolling ? '30%' : '47%')};
   height: auto;
+  cursor: pointer;
   transition: all 0.4s;
 `;
 

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 export const MainPageContainer = styled.div``;
 
@@ -48,6 +49,13 @@ export const SocialButtonsContainer = styled.div`
 export const SocialImage = styled.img`
   height: 45px;
   width: auto;
+  cursor: pointer;
+`;
+
+export const SocialImageYtube = styled.img`
+  height: 35px;
+  width: auto;
+  cursor: pointer;
 `;
 
 export const CategoriesSliderContainer = styled.div`
@@ -227,4 +235,10 @@ export const MapBoxCoverInfo = styled.div`
   width: 100%;
   height: 5%;
   background-color: white;
+`;
+
+export const StyledYouTubeIcon = styled(YouTubeIcon)`
+  position: absolute;
+  color: white;
+  opacity: 0.7;
 `;

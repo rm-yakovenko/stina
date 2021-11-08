@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from 'components/Header';
 import chirchImage from 'assets/chirch.png';
 import facebookLogo from 'assets/facebook.png';
@@ -13,6 +13,7 @@ import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
 import Map from './Map';
 import { categories } from './categories';
+import { categoriesMap } from './categoriesMap';
 import {
   MainPageContainer,
   ImageContainer,
@@ -30,6 +31,7 @@ import {
   StyledLocationIcon,
   VideoSliderContainer,
   MapBoxCoverInfo,
+  SocialImageYtube,
 } from './style';
 
 const heroText = `В далекому минулому, ще
@@ -47,10 +49,12 @@ const embrText = `Стіна моя старенька, моя ти люба
   з тобою рідний край`;
 
 function MainPage() {
+  const topContainerRef = useRef(null);
+
   return (
     <MainPageContainer>
-      <ImageContainer>
-        <Header />
+      <ImageContainer ref={topContainerRef}>
+        <Header topContainerRef={topContainerRef} />
         <StyledImage src={chirchImage} />
         <HeroTextContent>
           <Body1>{heroText}</Body1>
@@ -59,7 +63,7 @@ function MainPage() {
           <SocialButtonsContainer>
             <SocialImage src={pangeyaLogo} />
             <SocialImage src={facebookLogo} />
-            <SocialImage src={yutubeLogo} />
+            <SocialImageYtube src={yutubeLogo} />
             <SocialImage src={gphotosLogo} />
           </SocialButtonsContainer>
         </HeroBottomMenu>
@@ -79,7 +83,7 @@ function MainPage() {
           <MapBoxCoverInfo />
         </StyledMap>
         <MapCategoriesContainer>
-          {categories.map((category) => (
+          {categoriesMap.map((category) => (
             <MapCategoryItem key={category.id}>
               <MapCategoryButton>
                 <StyledLocationIcon color={category.color} />

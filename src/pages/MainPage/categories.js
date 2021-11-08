@@ -1,5 +1,4 @@
 import breadImage from 'assets/bread.png';
-import * as colors from 'theme/colors';
 
 export const categories = [
   {
@@ -8,7 +7,6 @@ export const categories = [
     nameFirs: 'Харчування',
     nameSecond: 'Гастрономія',
     image: breadImage,
-    color: colors.Mauvelous,
   },
   {
     id: 2,
@@ -16,7 +14,6 @@ export const categories = [
     nameFirs: 'Розміщення',
     nameSecond: 'Житло',
     image: breadImage,
-    color: colors.PiggyPink,
   },
   {
     id: 3,
@@ -24,7 +21,6 @@ export const categories = [
     nameFirs: 'Місцевий',
     nameSecond: 'продукт',
     image: breadImage,
-    color: colors.VividBlue,
   },
   {
     id: 4,
@@ -32,7 +28,6 @@ export const categories = [
     nameFirs: 'Волонтерство',
     nameSecond: 'навчання',
     image: breadImage,
-    color: colors.GreenSheen,
   },
   {
     id: 5,
@@ -40,7 +35,6 @@ export const categories = [
     nameFirs: 'Активний',
     nameSecond: 'відпочинок',
     image: breadImage,
-    color: colors.Mantis,
   },
   {
     id: 6,
@@ -48,7 +42,6 @@ export const categories = [
     nameFirs: 'Майстер-класи',
     nameSecond: 'Ремесла',
     image: breadImage,
-    color: colors.MintGreen,
   },
   {
     id: 7,
@@ -56,7 +49,6 @@ export const categories = [
     nameFirs: 'Комплексні',
     nameSecond: 'тури',
     image: breadImage,
-    color: colors.CadetGrey,
   },
   {
     id: 8,
@@ -64,7 +56,6 @@ export const categories = [
     nameFirs: 'Місцеві',
     nameSecond: 'цікавинки',
     image: breadImage,
-    color: colors.SpanishViolet,
   },
   {
     id: 9,
@@ -72,6 +63,5 @@ export const categories = [
     nameFirs: 'Особливі',
     nameSecond: 'пропозиції',
     image: breadImage,
-    color: colors.DarkPurple,
   },
 ];

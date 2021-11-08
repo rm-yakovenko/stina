@@ -9,7 +9,7 @@ import {
   StyledLink,
 } from './style';
 
-function Header() {
+function Header({ topContainerRef }) {
   const [isScrolling, setScrolling] = useState(false);
 
   const handleScroll = () => {
@@ -22,11 +22,20 @@ function Header() {
     }
   };
 
+  const handleScrollTop = () => {
+    topContainerRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
   window.addEventListener('scroll', handleScroll);
+
   return (
     <HeaderContainer isScrolling={isScrolling}>
       <LogoContainer isScrolling={isScrolling}>
-        <LogoImage src={logo} isScrolling={isScrolling} />
+        <LogoImage
+          src={logo}
+          isScrolling={isScrolling}
+          onClick={handleScrollTop}
+        />
       </LogoContainer>
       <LinksContainer>
         <StyledLink>
