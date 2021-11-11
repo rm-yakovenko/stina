@@ -12,7 +12,7 @@ export const HeaderContainer = styled.div`
   height: ${(props) => (props.isScrolling ? '80px' : '90px')};
   background-color: ${colors.lightBlue};
   box-shadow: 0 5px 5px grey;
-  z-index: 100;
+  z-index: 10000;
   transition: all 0.4s;
 `;
 

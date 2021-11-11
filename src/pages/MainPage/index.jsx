@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import Header from 'components/Header';
 import chirchImage from 'assets/chirch.png';
 import facebookLogo from 'assets/facebook.png';
@@ -11,7 +11,7 @@ import { HeadingH6, Body1 } from 'components/Typography';
 import Footer from 'components/Footer';
 import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
-import Map from './Map';
+import LeafletMap from './LeafletMap';
 import { categoriesMap } from './categoriesMap';
 import {
   MainPageContainer,
@@ -29,7 +29,6 @@ import {
   MapCategoryItem,
   StyledLocationIcon,
   VideoSliderContainer,
-  MapBoxCoverInfo,
   SocialImageYtube,
 } from './style';
 
@@ -49,6 +48,7 @@ const embrText = `Стіна моя старенька, моя ти люба
 
 function MainPage() {
   const topContainerRef = useRef(null);
+  const [currentCategory, setCurrentCategory] = useState(null);
 
   return (
     <MainPageContainer>
@@ -78,14 +78,16 @@ function MainPage() {
       </ImageContainer>
       <MapContainer>
         <StyledMap>
-          <Map />
-          <MapBoxCoverInfo />
+          <LeafletMap currentCategory={currentCategory} />
         </StyledMap>
         <MapCategoriesContainer>
           {categoriesMap.map((category) => (
             <MapCategoryItem key={category.id}>
-              <MapCategoryButton>
-                <StyledLocationIcon color={category.color} />
+              <MapCategoryButton selected={category.id === currentCategory?.id}>
+                <StyledLocationIcon
+                  color={category.color}
+                  onClick={() => setCurrentCategory(category)}
+                />
               </MapCategoryButton>
               <HeadingH6>{category.name}</HeadingH6>
             </MapCategoryItem>

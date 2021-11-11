@@ -27,6 +27,8 @@
 		"react/jsx-props-no-spreading": "off",
 		"react/jsx-no-duplicate-props": "off",
 		"no-param-reassign": "off",
-		"react/prop-types": "off"
+		"react/prop-types": "off",
+		"no-underscore-dangle": "off",
+		"global-require":"off"
 	}
 }

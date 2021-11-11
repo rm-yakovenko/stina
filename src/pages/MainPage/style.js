@@ -228,15 +228,6 @@ export const MapBoxContainer = styled.div`
   height: 100%;
 `;
 
-export const MapBoxCoverInfo = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 100%;
-  height: 5%;
-  background-color: white;
-`;
-
 export const StyledYouTubeIcon = styled(YouTubeIcon)`
   position: absolute;
   color: white;

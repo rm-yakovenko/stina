@@ -38,7 +38,7 @@ function VideosSlider() {
       <SwiperContainer>
         <Swiper loop slidesPerView={4} ref={swiperRef}>
           {videos.map((video) => (
-            <SwiperSlide>
+            <SwiperSlide key={video.id}>
               <StyledSwiperVideoSlide
                 onMouseEnter={() => setCurrentSlide(video)}
                 onMouseLeave={() => setCurrentSlide(null)}
