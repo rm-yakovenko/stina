@@ -1,31 +1,32 @@
 {
   "files": {
     "main.css": "/stina/static/css/main.4bcfd9d0.chunk.css",
-    "main.js": "/stina/static/js/main.2bfcf785.chunk.js",
-    "main.js.map": "/stina/static/js/main.2bfcf785.chunk.js.map",
-    "runtime-main.js": "/stina/static/js/runtime-main.ccbd388a.js",
-    "runtime-main.js.map": "/stina/static/js/runtime-main.ccbd388a.js.map",
-    "static/css/2.e6a755d0.chunk.css": "/stina/static/css/2.e6a755d0.chunk.css",
-    "static/js/2.0c716b23.chunk.js": "/stina/static/js/2.0c716b23.chunk.js",
-    "static/js/2.0c716b23.chunk.js.map": "/stina/static/js/2.0c716b23.chunk.js.map",
-    "static/js/3.b9f73351.chunk.js": "/stina/static/js/3.b9f73351.chunk.js",
-    "static/js/3.b9f73351.chunk.js.map": "/stina/static/js/3.b9f73351.chunk.js.map",
+    "main.js": "/stina/static/js/main.801cb51e.chunk.js",
+    "main.js.map": "/stina/static/js/main.801cb51e.chunk.js.map",
+    "runtime-main.js": "/stina/static/js/runtime-main.cd0c5f62.js",
+    "runtime-main.js.map": "/stina/static/js/runtime-main.cd0c5f62.js.map",
+    "static/css/2.b1c75411.chunk.css": "/stina/static/css/2.b1c75411.chunk.css",
+    "static/js/2.6258a4fd.chunk.js": "/stina/static/js/2.6258a4fd.chunk.js",
+    "static/js/2.6258a4fd.chunk.js.map": "/stina/static/js/2.6258a4fd.chunk.js.map",
+    "static/js/3.f8c022ca.chunk.js": "/stina/static/js/3.f8c022ca.chunk.js",
+    "static/js/3.f8c022ca.chunk.js.map": "/stina/static/js/3.f8c022ca.chunk.js.map",
     "index.html": "/stina/index.html",
-    "static/css/2.e6a755d0.chunk.css.map": "/stina/static/css/2.e6a755d0.chunk.css.map",
+    "static/css/2.b1c75411.chunk.css.map": "/stina/static/css/2.b1c75411.chunk.css.map",
     "static/css/main.4bcfd9d0.chunk.css.map": "/stina/static/css/main.4bcfd9d0.chunk.css.map",
-    "static/js/2.0c716b23.chunk.js.LICENSE.txt": "/stina/static/js/2.0c716b23.chunk.js.LICENSE.txt",
+    "static/js/2.6258a4fd.chunk.js.LICENSE.txt": "/stina/static/js/2.6258a4fd.chunk.js.LICENSE.txt",
     "static/media/bread.dd96223b.png": "/stina/static/media/bread.dd96223b.png",
     "static/media/chirch.940dbf67.png": "/stina/static/media/chirch.940dbf67.png",
     "static/media/embrodery.bbb8971c.png": "/stina/static/media/embrodery.bbb8971c.png",
     "static/media/gphotos.bc913776.png": "/stina/static/media/gphotos.bc913776.png",
     "static/media/logo.a06c2ab9.png": "/stina/static/media/logo.a06c2ab9.png",
+    "static/media/marker.7a5b304e.svg": "/stina/static/media/marker.7a5b304e.svg",
     "static/media/pangeya.923dcc6b.png": "/stina/static/media/pangeya.923dcc6b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ccbd388a.js",
-    "static/css/2.e6a755d0.chunk.css",
-    "static/js/2.0c716b23.chunk.js",
+    "static/js/runtime-main.cd0c5f62.js",
+    "static/css/2.b1c75411.chunk.css",
+    "static/js/2.6258a4fd.chunk.js",
     "static/css/main.4bcfd9d0.chunk.css",
-    "static/js/main.2bfcf785.chunk.js"
+    "static/js/main.801cb51e.chunk.js"
   ]
 }
