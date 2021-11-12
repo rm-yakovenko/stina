@@ -49,3 +49,9 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
 `;
+
+export const LanguageContainer = styled.div`
+  position: absolute;
+  top: 20px;
+  left: 10px;
+`;

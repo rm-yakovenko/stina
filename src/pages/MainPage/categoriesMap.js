@@ -23,13 +23,13 @@ export const categoriesMap = [
     id: 4,
     name: 'Цікавинки',
     color: colors.DarkPurple,
-    places: [{ name: 'Харчування', position: [48.4525087, 28.4034291] }],
+    places: [{ name: 'Цікавинки', position: [48.4525087, 28.4034291] }],
   },
   {
     id: 5,
-    name: 'Цікавинки',
+    name: 'Майстер-класи',
     color: colors.Mantis,
-    places: [{ name: 'Цікавинки', position: [48.4525087, 28.4034291] }],
+    places: [{ name: 'Майстер-класи', position: [48.4525087, 28.4034291] }],
   },
   {
     id: 6,

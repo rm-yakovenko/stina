@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import Header from 'components/Header';
 import chirchImage from 'assets/chirch.png';
 import facebookLogo from 'assets/facebook.png';
@@ -32,23 +33,10 @@ import {
   SocialImageYtube,
 } from './style';
 
-const heroText = `В далекому минулому, ще
-  в кам'яному віці, трипільської
-  культури поселення було,
-  тепер стоять кургани і
-  сон-трава тут квітне, а селище,
-  що поруч, Стіною нареклось.`;
-
-const embrText = `Стіна моя старенька, моя ти люба
-  ненько, то ж будь завжди веселою і
-  всіх гостей встрічай.
-  Де б в світі ми не були та тягне нас
-  серденько, бо хочеться зустрітися
-  з тобою рідний край`;
-
 function MainPage() {
   const topContainerRef = useRef(null);
   const [currentCategory, setCurrentCategory] = useState(null);
+  const { t } = useTranslation();
 
   return (
     <MainPageContainer>
@@ -56,7 +44,7 @@ function MainPage() {
         <Header topContainerRef={topContainerRef} />
         <StyledImage src={chirchImage} />
         <HeroTextContent>
-          <Body1>{heroText}</Body1>
+          <Body1>{t('heroText')}</Body1>
         </HeroTextContent>
         <HeroBottomMenu>
           <SocialButtonsContainer>
@@ -73,7 +61,7 @@ function MainPage() {
       <ImageContainer>
         <StyledImage src={embroderyImage} />
         <LeftSideTextContent>
-          <Body1>{embrText}</Body1>
+          <Body1>{t('embrText')}</Body1>
         </LeftSideTextContent>
       </ImageContainer>
       <MapContainer>

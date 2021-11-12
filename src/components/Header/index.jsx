@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from 'assets/logo.png';
 import { HeadingLinks } from 'components/Typography';
+import Language from './Language';
 import {
   HeaderContainer,
   LogoContainer,
@@ -30,6 +31,7 @@ function Header({ topContainerRef }) {
 
   return (
     <HeaderContainer isScrolling={isScrolling}>
+      <Language />
       <LogoContainer isScrolling={isScrolling}>
         <LogoImage
           src={logo}
