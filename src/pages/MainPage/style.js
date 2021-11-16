@@ -146,11 +146,12 @@ export const StyledMap = styled.div`
 export const MapCategoryItem = styled.div`
   display: flex;
   align-items: center;
-  padding: 10px;
+  padding: 5px 0;
 `;
 
 export const StyledLocationIcon = styled(LocationOnIcon)`
   color: ${(props) => (props.color ? props.color : 'red')};
+  font-size: 35px !important;
 `;
 
 export const VideoSliderContainer = styled.div`

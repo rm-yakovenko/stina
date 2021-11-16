@@ -52,6 +52,11 @@ export const StyledLink = styled(Link)`
 
 export const LanguageContainer = styled.div`
   position: absolute;
-  top: 20px;
+  top: 25px;
   left: 10px;
+`;
+
+export const FlagImage = styled.img`
+  width: 40px;
+  height: auto;
 `;

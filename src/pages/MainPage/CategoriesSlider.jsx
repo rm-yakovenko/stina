@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { HeadingH5 } from 'components/Typography';
 import arrowImage from 'assets/arrow.png';
-import { categories } from './categories';
+import { useCategories } from './categories';
 
 import {
   CategoryImage,
@@ -23,6 +23,8 @@ import 'swiper/swiper.min.css';
 function CategoriesSlider() {
   const swiperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(null);
+
+  const categories = useCategories();
 
   return (
     <SwiperContainer>

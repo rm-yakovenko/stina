@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import logo from 'assets/logo.png';
 import { HeadingLinks } from 'components/Typography';
+import { useTranslation } from 'react-i18next';
 import Language from './Language';
 import {
   HeaderContainer,
@@ -12,6 +13,8 @@ import {
 
 function Header({ topContainerRef }) {
   const [isScrolling, setScrolling] = useState(false);
+
+  const { t } = useTranslation();
 
   const handleScroll = () => {
     if (window.scrollY >= 100 && !isScrolling) {
@@ -41,13 +44,13 @@ function Header({ topContainerRef }) {
       </LogoContainer>
       <LinksContainer>
         <StyledLink>
-          <HeadingLinks>ЕКО-ЦЕНТР</HeadingLinks>
+          <HeadingLinks>{t('navLink1')}</HeadingLinks>
         </StyledLink>
         <StyledLink>
-          <HeadingLinks>ЯК ДОЇХАТИ</HeadingLinks>
+          <HeadingLinks>{t('navLink2')}</HeadingLinks>
         </StyledLink>
         <StyledLink>
-          <HeadingLinks>ЩО ТУТ РОБИТИ</HeadingLinks>
+          <HeadingLinks>{t('navLink3')}</HeadingLinks>
         </StyledLink>
       </LinksContainer>
     </HeaderContainer>

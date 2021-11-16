@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import Link from '@material-ui/core/Link';
 import { useTranslation } from 'react-i18next';
 import Header from 'components/Header';
 import chirchImage from 'assets/chirch.png';
@@ -13,7 +14,7 @@ import Footer from 'components/Footer';
 import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
 import LeafletMap from './LeafletMap';
-import { categoriesMap } from './categoriesMap';
+import { useCategoriesMap } from './categoriesMap';
 import {
   MainPageContainer,
   ImageContainer,
@@ -38,6 +39,8 @@ function MainPage() {
   const [currentCategory, setCurrentCategory] = useState(null);
   const { t } = useTranslation();
 
+  const categoriesMap = useCategoriesMap();
+
   return (
     <MainPageContainer>
       <ImageContainer ref={topContainerRef}>
@@ -48,10 +51,27 @@ function MainPage() {
         </HeroTextContent>
         <HeroBottomMenu>
           <SocialButtonsContainer>
-            <SocialImage src={pangeyaLogo} />
-            <SocialImage src={facebookLogo} />
-            <SocialImageYtube src={yutubeLogo} />
-            <SocialImage src={gphotosLogo} />
+            <Link href="https://www.pangeya.com.ua" target="_blank">
+              <SocialImage src={pangeyaLogo} />
+            </Link>
+            <Link
+              href="https://www.facebook.com/stinaecocenter"
+              target="_blank"
+            >
+              <SocialImage src={facebookLogo} />
+            </Link>
+            <Link
+              href="https://www.youtube.com/channel/UCS9k8Er19EUxesrVPbLtE_w/videos"
+              target="_blank"
+            >
+              <SocialImageYtube src={yutubeLogo} />
+            </Link>
+            <Link
+              href="https://photos.app.goo.gl/Mpfi1Xy9KbhnWj4V8"
+              target="_blank"
+            >
+              <SocialImage src={gphotosLogo} />
+            </Link>
           </SocialButtonsContainer>
         </HeroBottomMenu>
       </ImageContainer>
