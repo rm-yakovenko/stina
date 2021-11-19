@@ -50,7 +50,7 @@ export const useCategoriesMap = () => {
     {
       id: 8,
       name: t('mapCategory8'),
-      color: colors.SpanishViolet,
+      color: colors.SaffronYellow,
       places: [{ name: t('mapCategory8'), position: [48.4525087, 28.4034291] }],
     },
     {

@@ -11,6 +11,7 @@ export const useCategories = () => {
       nameFirs: t('category1First'),
       nameSecond: t('category1Second'),
       image: breadImage,
+      link: '/food',
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ export const useCategories = () => {
       nameFirs: t('category2First'),
       nameSecond: t('category2Second'),
       image: breadImage,
+      link: '/acomodation',
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ export const useCategories = () => {
       nameFirs: t('category3First'),
       nameSecond: t('category3Second'),
       image: breadImage,
+      link: '/product',
     },
     {
       id: 4,
@@ -32,6 +35,7 @@ export const useCategories = () => {
       nameFirs: t('category4First'),
       nameSecond: t('category4Second'),
       image: breadImage,
+      link: '/wolunteering',
     },
     {
       id: 5,
@@ -39,6 +43,7 @@ export const useCategories = () => {
       nameFirs: t('category5First'),
       nameSecond: t('category5Second'),
       image: breadImage,
+      link: '/activerest',
     },
     {
       id: 6,
@@ -46,6 +51,7 @@ export const useCategories = () => {
       nameFirs: t('category6First'),
       nameSecond: t('category6Second'),
       image: breadImage,
+      link: '/masterclasses',
     },
     {
       id: 7,
@@ -53,6 +59,7 @@ export const useCategories = () => {
       nameFirs: t('category7First'),
       nameSecond: t('category7Second'),
       image: breadImage,
+      link: '/complextours',
     },
     {
       id: 8,
@@ -60,6 +67,7 @@ export const useCategories = () => {
       nameFirs: t('category8First'),
       nameSecond: t('category8Second'),
       image: breadImage,
+      link: '/interestplaces',
     },
     {
       id: 9,
@@ -67,6 +75,7 @@ export const useCategories = () => {
       nameFirs: t('category9First'),
       nameSecond: t('category9Second'),
       image: breadImage,
+      link: '/propositions',
     },
   ];
 

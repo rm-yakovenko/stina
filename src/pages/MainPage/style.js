@@ -122,23 +122,30 @@ export const LeftSideTextContent = styled.div`
 `;
 
 export const MapContainer = styled.div`
+  position: relative;
   display: flex;
-  height: 700px;
+  height: 800px;
   padding-left: 10px;
   padding-right: 10px;
 `;
 
 export const MapCategoriesContainer = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
-  width: 30%;
-  padding-top: 10px;
+  width: 300px;
+  padding-top: 40px;
   padding-bottom: 10px;
+  padding-right: 40px;
+  background-color: transparent;
+  z-index: 1000;
 `;
 
 export const StyledMap = styled.div`
   position: relative;
-  width: 70%;
+  width: 100%;
   padding: 30px;
   padding-bottom: 40px;
 `;

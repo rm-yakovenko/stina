@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Link from '@material-ui/core/Link';
 import { useTranslation } from 'react-i18next';
-import Header from 'components/Header';
 import chirchImage from 'assets/chirch.png';
 import facebookLogo from 'assets/facebook.png';
 import pangeyaLogo from 'assets/pangeya.png';
@@ -10,7 +9,6 @@ import gphotosLogo from 'assets/gphotos.png';
 import embroderyImage from 'assets/embrodery.png';
 import { MapCategoryButton } from 'components/Buttons';
 import { HeadingH6, Body1 } from 'components/Typography';
-import Footer from 'components/Footer';
 import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
 import LeafletMap from './LeafletMap';
@@ -35,7 +33,6 @@ import {
 } from './style';
 
 function MainPage() {
-  const topContainerRef = useRef(null);
   const [currentCategory, setCurrentCategory] = useState(null);
   const { t } = useTranslation();
 
@@ -43,15 +40,14 @@ function MainPage() {
 
   return (
     <MainPageContainer>
-      <ImageContainer ref={topContainerRef}>
-        <Header topContainerRef={topContainerRef} />
+      <ImageContainer>
         <StyledImage src={chirchImage} />
         <HeroTextContent>
           <Body1>{t('heroText')}</Body1>
         </HeroTextContent>
         <HeroBottomMenu>
           <SocialButtonsContainer>
-            <Link href="https://www.pangeya.com.ua" target="_blank">
+            <Link href="http://pangeya.com.ua/" target="_blank">
               <SocialImage src={pangeyaLogo} />
             </Link>
             <Link
@@ -105,7 +101,6 @@ function MainPage() {
       <VideoSliderContainer>
         <VideosSlider />
       </VideoSliderContainer>
-      <Footer />
     </MainPageContainer>
   );
 }

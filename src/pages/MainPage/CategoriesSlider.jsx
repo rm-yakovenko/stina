@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { HeadingH5 } from 'components/Typography';
 import arrowImage from 'assets/arrow.png';
@@ -24,6 +25,8 @@ function CategoriesSlider() {
   const swiperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(null);
 
+  const history = useHistory();
+
   const categories = useCategories();
 
   return (
@@ -34,6 +37,7 @@ function CategoriesSlider() {
             <StyledSwiperSlide
               onMouseEnter={() => setCurrentSlide(category.id)}
               onMouseLeave={() => setCurrentSlide(null)}
+              onClick={() => history.push(category.link)}
             >
               <CategoryNameTop isHover={currentSlide === category.id}>
                 <HeadingH5>{category.nameFirs}</HeadingH5>

@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
+import Spinner from 'components/Spinner';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'index.css';
@@ -7,7 +8,7 @@ import './i18n';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback="loading">
+    <Suspense fallback={<Spinner />}>
       <App />
     </Suspense>
   </React.StrictMode>,

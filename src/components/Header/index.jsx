@@ -43,10 +43,10 @@ function Header({ topContainerRef }) {
         />
       </LogoContainer>
       <LinksContainer>
-        <StyledLink>
+        <StyledLink to="/eco-center">
           <HeadingLinks>{t('navLink1')}</HeadingLinks>
         </StyledLink>
-        <StyledLink>
+        <StyledLink to="/how-to-get">
           <HeadingLinks>{t('navLink2')}</HeadingLinks>
         </StyledLink>
         <StyledLink>
