@@ -43,7 +43,9 @@ function MainPage() {
       <ImageContainer>
         <StyledImage src={chirchImage} />
         <HeroTextContent>
-          <Body1>{t('heroText')}</Body1>
+          <Body1>
+            <i>{t('heroText')}</i>
+          </Body1>
         </HeroTextContent>
         <HeroBottomMenu>
           <SocialButtonsContainer>
@@ -77,7 +79,9 @@ function MainPage() {
       <ImageContainer>
         <StyledImage src={embroderyImage} />
         <LeftSideTextContent>
-          <Body1>{t('embrText')}</Body1>
+          <Body1>
+            <i>{t('embrText')}</i>
+          </Body1>
         </LeftSideTextContent>
       </ImageContainer>
       <MapContainer>

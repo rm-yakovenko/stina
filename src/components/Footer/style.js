@@ -50,6 +50,6 @@ export const StyledLogo2 = styled.img`
 `;
 
 export const StyledLogo3 = styled.img`
-  width: 70%;
+  width: 40%;
   height: auto;
 `;

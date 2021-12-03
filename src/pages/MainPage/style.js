@@ -66,6 +66,7 @@ export const CategoriesSliderContainer = styled.div`
 export const CategoryImage = styled.img`
   width: 80%;
   height: auto;
+  border-radius: 50%;
 `;
 
 export const VideoImage = styled.img`

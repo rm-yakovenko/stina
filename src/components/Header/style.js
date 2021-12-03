@@ -60,3 +60,17 @@ export const FlagImage = styled.img`
   width: 40px;
   height: auto;
 `;
+
+export const HutContainer = styled.div`
+  position: absolute;
+  top: ${(props) => (props.isScrolling ? '12px' : '16px')};
+  left: 120px;
+  width: 60px;
+  height: 60px;
+  transition: all 0.4s;
+`;
+
+export const HutImage = styled.img`
+  width: 100%;
+  height: auto;
+`;

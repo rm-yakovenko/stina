@@ -1,7 +1,6 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
 import footerLogo1 from 'assets/footerLogo1.png';
-import footerLogo2 from 'assets/footerLogo2.png';
 import footerLogo3 from 'assets/footerLogo3.png';
 import { HeadingH6 } from 'components/Typography';
 import { links } from './links';
@@ -14,7 +13,6 @@ import {
   StyledLink,
   StyledContact,
   StyledLogo1,
-  StyledLogo2,
   StyledLogo3,
 } from './style';
 
@@ -42,7 +40,6 @@ function Footer() {
       <Box width="33%" display="flex" justifyContent="flex-end">
         <LogosContainer>
           <StyledLogo1 src={footerLogo1} />
-          <StyledLogo2 src={footerLogo2} />
           <StyledLogo3 src={footerLogo3} />
         </LogosContainer>
       </Box>

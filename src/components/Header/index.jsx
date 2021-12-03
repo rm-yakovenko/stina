@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from 'assets/logo.png';
+import hut from 'assets/hut.png';
 import { HeadingLinks } from 'components/Typography';
 import { useTranslation } from 'react-i18next';
 import Language from './Language';
@@ -9,6 +10,8 @@ import {
   LogoImage,
   LinksContainer,
   StyledLink,
+  HutContainer,
+  HutImage,
 } from './style';
 
 function Header({ topContainerRef }) {
@@ -35,6 +38,11 @@ function Header({ topContainerRef }) {
   return (
     <HeaderContainer isScrolling={isScrolling}>
       <Language />
+      <StyledLink to="/">
+        <HutContainer isScrolling={isScrolling}>
+          <HutImage src={hut} />
+        </HutContainer>
+      </StyledLink>
       <LogoContainer isScrolling={isScrolling}>
         <LogoImage
           src={logo}
