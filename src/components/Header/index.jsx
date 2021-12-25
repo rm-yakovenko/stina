@@ -57,7 +57,7 @@ function Header({ topContainerRef }) {
         <StyledLink to="/how-to-get">
           <HeadingLinks>{t('navLink2')}</HeadingLinks>
         </StyledLink>
-        <StyledLink>
+        <StyledLink to="#">
           <HeadingLinks>{t('navLink3')}</HeadingLinks>
         </StyledLink>
       </LinksContainer>

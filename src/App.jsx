@@ -14,6 +14,8 @@ import Wolunteering from 'pages/Wolunteering';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Admin from 'pages/Admin';
+import Login from 'pages/Login';
 import { MainContainer } from 'style';
 
 function App() {
@@ -35,6 +37,8 @@ function App() {
           <Route path="/product" component={Product} />
           <Route path="/propositions" component={Propositions} />
           <Route path="/wolunteering" component={Wolunteering} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/login" component={Login} />
           <Route path="/" component={MainPage} />
         </Switch>
         <Footer />

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import { Popup } from 'react-leaflet';
 
 export const MainPageContainer = styled.div``;
 
@@ -241,4 +242,15 @@ export const StyledYouTubeIcon = styled(YouTubeIcon)`
   position: absolute;
   color: white;
   opacity: 0.7;
+`;
+
+export const StyledMapPopup = styled(Popup)`
+  width: fit-content;
+
+  .leaflet-popup-content {
+    margin: 0;
+  }
+  .leaflet-popup-content-wrapper {
+    padding: 0;
+  }
 `;

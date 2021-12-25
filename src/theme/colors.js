@@ -11,3 +11,5 @@ export const CadetGrey = '#95a3b3';
 export const SaffronYellow = '#f3c030';
 export const GreenSheen = '#60ab9a';
 export const VividBlue = '#0acdff';
+
+export const PlaceBack = '#ece4e4';

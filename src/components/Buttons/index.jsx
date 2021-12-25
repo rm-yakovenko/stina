@@ -1,1 +1,1 @@
-export { MapCategoryButton } from './style';
+export { MapCategoryButton, RoundIconButton } from './style';

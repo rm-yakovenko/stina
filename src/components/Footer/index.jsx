@@ -22,7 +22,7 @@ function Footer() {
       <Box width="33%" display="flex" justifyContent="flex-start">
         <LinksContainer>
           {links.map((link) => (
-            <StyledLink href={link.url} target="_blank">
+            <StyledLink href={link.url} target="_blank" key={link.name}>
               <HeadingH6>{link.name}</HeadingH6>
             </StyledLink>
           ))}
@@ -31,7 +31,7 @@ function Footer() {
       <Box width="33%" display="flex" justifyContent="center">
         <ContactsContainer>
           {contacts.map((contact) => (
-            <StyledContact>
+            <StyledContact key={contact}>
               <HeadingH6>{contact}</HeadingH6>
             </StyledContact>
           ))}

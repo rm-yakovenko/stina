@@ -8,3 +8,8 @@ export const extractYoutubeVideoId = (url = '') => {
   const urlParams = new URLSearchParams(searchParams);
   return urlParams.get('v');
 };
+
+export const getVideoPreviewImg = (url) => {
+  const id = extractYoutubeVideoId(url);
+  return id && `https://img.youtube.com/vi/${id}/sddefault.jpg`;
+};

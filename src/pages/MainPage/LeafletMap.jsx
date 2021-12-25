@@ -1,4 +1,5 @@
 import React from 'react';
+import PlaceCard from 'components/PlaceCard';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -13,6 +14,8 @@ import marker7 from 'assets/markers/marker7.svg';
 import marker8 from 'assets/markers/marker8.svg';
 import marker9 from 'assets/markers/marker9.svg';
 import marker10 from 'assets/markers/marker10.svg';
+
+import { StyledMapPopup } from './style';
 
 const MARKER_SIZE = [30, 40];
 
@@ -85,10 +88,13 @@ function LeafletMap({ currentCategory }) {
       {currentCategory &&
         currentCategory.places.map((place) => (
           <Marker
-            position={place.position}
+            key={place.id}
+            position={[place.lat, place.long]}
             icon={markersMap[currentCategory.id]}
           >
-            <Popup>{place.name}</Popup>
+            <StyledMapPopup>
+              <PlaceCard placeData={place} />
+            </StyledMapPopup>
           </Marker>
         ))}
     </MapContainer>

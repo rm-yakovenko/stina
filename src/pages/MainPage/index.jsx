@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Link from '@material-ui/core/Link';
 import { useTranslation } from 'react-i18next';
 import chirchImage from 'assets/chirch.png';
@@ -9,6 +9,8 @@ import gphotosLogo from 'assets/gphotos.png';
 import embroderyImage from 'assets/embrodery.png';
 import { MapCategoryButton } from 'components/Buttons';
 import { HeadingH6, Body1 } from 'components/Typography';
+import { getVideos, useVideosDispatch } from 'components/useVideos';
+import { getPlaces, usePlacesDispatch } from 'components/usePlaces';
 import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
 import LeafletMap from './LeafletMap';
@@ -35,6 +37,23 @@ import {
 function MainPage() {
   const [currentCategory, setCurrentCategory] = useState(null);
   const { t } = useTranslation();
+
+  const categoriesRef = useRef(null);
+  const videosDispatch = useVideosDispatch();
+  const placesDispatch = usePlacesDispatch();
+
+  const handleScroll = () => {
+    //console.log(categoriesRef.current);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    getVideos(videosDispatch);
+    getPlaces(placesDispatch);
+  }, []);
 
   const categoriesMap = useCategoriesMap();
 
@@ -73,7 +92,7 @@ function MainPage() {
           </SocialButtonsContainer>
         </HeroBottomMenu>
       </ImageContainer>
-      <CategoriesSliderContainer>
+      <CategoriesSliderContainer ref={categoriesRef}>
         <CategoriesSlider />
       </CategoriesSliderContainer>
       <ImageContainer>

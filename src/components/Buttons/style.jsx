@@ -8,3 +8,7 @@ export const MapCategoryButton = styled(IconButton)`
   margin-right: 10px !important;
   box-shadow: 0 5px 5px grey;
 `;
+
+export const RoundIconButton = styled(IconButton)`
+  background: ${colors.lightBlue} !important;
+`;

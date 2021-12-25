@@ -1,6 +1,8 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import Spinner from 'components/Spinner';
+import { VideosProvider } from 'components/useVideos';
+import { PlacesProvider } from 'components/usePlaces';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'index.css';
@@ -9,7 +11,11 @@ import './i18n';
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<Spinner />}>
-      <App />
+      <PlacesProvider>
+        <VideosProvider>
+          <App />
+        </VideosProvider>
+      </PlacesProvider>
     </Suspense>
   </React.StrictMode>,
   document.getElementById('root'),

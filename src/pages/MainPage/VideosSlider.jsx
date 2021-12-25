@@ -1,9 +1,9 @@
 import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import YouTubeModal from 'components/YouTubeModal';
-import { extractYoutubeVideoId } from 'helpers/videoHelpers';
+import { getVideoPreviewImg } from 'helpers/videoHelpers';
 import arrowImage from 'assets/arrow.png';
-import { videos } from './videoUrls';
+import { useVideosState } from 'components/useVideos';
 import {
   VideoImage,
   StyledSwiperVideoSlide,
@@ -18,14 +18,10 @@ import {
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 
-const getVideoPreviewImg = (url) => {
-  const id = extractYoutubeVideoId(url);
-  return id && `https://img.youtube.com/vi/${id}/sddefault.jpg`;
-};
-
 function VideosSlider() {
   const swiperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(null);
+  const { videos } = useVideosState();
 
   const [isYouTubeModalOpen, setYouTubeModalOpen] = useState(false);
 
