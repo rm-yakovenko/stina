@@ -60,6 +60,9 @@ function Header({ topContainerRef }) {
         <StyledLink to="#">
           <HeadingLinks>{t('navLink3')}</HeadingLinks>
         </StyledLink>
+        <StyledLink to="/admin">
+          <HeadingLinks>Admin</HeadingLinks>
+        </StyledLink>
       </LinksContainer>
     </HeaderContainer>
   );
