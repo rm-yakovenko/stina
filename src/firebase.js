@@ -68,6 +68,10 @@ export async function addDataToSubCollection(subCollectionRoute, data) {
   };
 }
 
+export async function editDocumentInCollection(collectionName, id, body) {
+  await updateDoc(doc(db, collectionName, id), body);
+}
+
 export async function editDocumentInSubCollection(
   subCollectionRoute,
   id,

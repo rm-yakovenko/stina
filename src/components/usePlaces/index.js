@@ -7,7 +7,7 @@ import { getPlaces, addPlace, deletePlace, editPlace } from './actions';
 function usePlacesState() {
   const context = useContext(PlacesStateContext);
   if (context === undefined) {
-    throw new Error('useNotesState must be used within a NotesProvider');
+    throw new Error('usePlacesState must be used within a PlacesProvider');
   }
   return context;
 }
@@ -15,7 +15,7 @@ function usePlacesState() {
 function usePlacesDispatch() {
   const context = useContext(PlacesDispatchContext);
   if (context === undefined) {
-    throw new Error('useNotesDispatch must be used within a NotesProvider');
+    throw new Error('usePlacesDispatch must be used within a PlacesProvider');
   }
   return context;
 }

@@ -11,7 +11,7 @@ function Sidebar({ location }) {
       {routes.map((route) => (
         <LinkContainer
           key={route.id}
-          selected={location.pathname === route.link}
+          selected={location.pathname.includes(route.link)}
           onClick={() => history.push(route.link)}
         >
           <HeadingH6>{route.name}</HeadingH6>

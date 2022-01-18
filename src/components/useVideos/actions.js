@@ -26,7 +26,6 @@ async function addVideo(dispatch, body) {
 async function deleteVideo(dispatch, id) {
   try {
     await deleteDocument('videos', id);
-    //const data = await getCollectionsData('videos');
     dispatch({ type: actionTypes.DELETE_VIDEO, data: id });
   } catch (error) {
     dispatch({ type: actionTypes.ERROR, error: error.message });

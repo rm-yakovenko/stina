@@ -16,7 +16,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Admin from 'pages/Admin';
 import Login from 'pages/Login';
-import { MainContainer } from 'style';
+import { MainContainer, PageContainer } from 'style';
 
 function App() {
   const topContainerRef = useRef(null);
@@ -25,23 +25,25 @@ function App() {
     <MainContainer ref={topContainerRef}>
       <Router>
         <Header topContainerRef={topContainerRef} />
-        <Switch>
-          <Route path="/acomodation" component={Acomodation} />
-          <Route path="/activerest" component={ActiveRest} />
-          <Route path="/complextours" component={ComplexTours} />
-          <Route path="/eco-center" component={EcoCenter} />
-          <Route path="/food" component={Food} />
-          <Route path="/how-to-get" component={HowToGet} />
-          <Route path="/interestplaces" component={InterestPlaces} />
-          <Route path="/masterclasses" component={MasterClasses} />
-          <Route path="/product" component={Product} />
-          <Route path="/propositions" component={Propositions} />
-          <Route path="/wolunteering" component={Wolunteering} />
-          <Route path="/admin" component={Admin} />
-          <Route path="/login" component={Login} />
-          <Route path="/" component={MainPage} />
-        </Switch>
-        <Footer />
+        <PageContainer>
+          <Switch>
+            <Route path="/acomodation" component={Acomodation} />
+            <Route path="/activerest" component={ActiveRest} />
+            <Route path="/complextours" component={ComplexTours} />
+            <Route path="/eco-center" component={EcoCenter} />
+            <Route path="/food" component={Food} />
+            <Route path="/how-to-get" component={HowToGet} />
+            <Route path="/interestplaces" component={InterestPlaces} />
+            <Route path="/masterclasses" component={MasterClasses} />
+            <Route path="/product" component={Product} />
+            <Route path="/propositions" component={Propositions} />
+            <Route path="/wolunteering" component={Wolunteering} />
+            <Route path="/admin" component={Admin} />
+            <Route path="/login" component={Login} />
+            <Route path="/" component={MainPage} />
+          </Switch>
+          <Footer />
+        </PageContainer>
       </Router>
     </MainContainer>
   );

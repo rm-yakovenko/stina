@@ -40,7 +40,7 @@ function CategoriesSlider() {
               onClick={() => history.push(category.link)}
             >
               <CategoryNameTop isHover={currentSlide === category.id}>
-                <HeadingH5>{category.nameFirs}</HeadingH5>
+                <HeadingH5>{category.nameFirst}</HeadingH5>
               </CategoryNameTop>
               <CategoryImage src={category.image} />
               <CategoryLine isHover={currentSlide === category.id} />

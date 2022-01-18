@@ -7,7 +7,7 @@ import { getVideos, addVideo, deleteVideo } from './actions';
 function useVideosState() {
   const context = useContext(VideosStateContext);
   if (context === undefined) {
-    throw new Error('useNotesState must be used within a NotesProvider');
+    throw new Error('useVideosState must be used within a VideosProvider');
   }
   return context;
 }
@@ -15,7 +15,7 @@ function useVideosState() {
 function useVideosDispatch() {
   const context = useContext(VideosDispatchContext);
   if (context === undefined) {
-    throw new Error('useNotesDispatch must be used within a NotesProvider');
+    throw new Error('useVideosDispatch must be used within a VideosProvider');
   }
   return context;
 }

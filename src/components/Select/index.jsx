@@ -17,6 +17,7 @@ function SelectInput({
   value,
   onChange,
   isDisabled,
+  isMulti = false,
 }) {
   const [field, meta] = useField(name);
   const errorText = meta.error && meta.touched ? meta.error : '';
@@ -92,6 +93,7 @@ function SelectInput({
         noOptionsMessage={() => null}
         placeholder={placeholder}
         isValid={isValid}
+        isMulti={isMulti}
       />
       {!isValid && <ErrorMessage>{errorText}</ErrorMessage>}
     </Box>

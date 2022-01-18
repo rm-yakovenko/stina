@@ -5,13 +5,16 @@ import * as colors from 'theme/colors';
 export const PageContainer = styled.div`
   display: flex;
   padding-top: 90px;
+  flex-grow: 1;
 `;
 
 export const PlacesContainer = styled.div`
   width: 100%;
 `;
 
-export const ArticlesContainer = styled.div``;
+export const ArticlesContainer = styled.div`
+  width: 100%;
+`;
 
 export const VideosContainer = styled.div`
   width: 100%;
