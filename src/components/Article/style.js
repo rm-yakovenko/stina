@@ -4,6 +4,6 @@ import * as colors from 'theme/colors';
 export const MainContainer = styled.div``;
 
 export const StyledImage = styled.img`
-  width: 100%;
+  width: 80%;
   height: auto;
 `;

@@ -63,7 +63,11 @@ export const useCategoriesMap = () => {
     ...category,
     places: places
       .find((place) => place.categoryId === category.id)
-      ?.places.map((place) => ({ ...place, name: t(place.name) })),
+      ?.places.map((place) => ({
+        ...place,
+        name: t(place.name),
+        nameCode: place.name,
+      })),
     documentId: places.find((place) => place.categoryId === category.id)?.id,
   }));
 };

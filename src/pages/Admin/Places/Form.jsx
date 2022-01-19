@@ -47,7 +47,7 @@ function AddPlaceForm({
       validateOnChange
       initialValues={{
         category: place ? place.category : null,
-        name: place ? place.name : '',
+        name: place ? place.nameCode : '',
         imageUrl: place ? place.imageUrl : '',
         pageLink: place ? place.pageLink : '',
         lat: place ? place.lat : '',

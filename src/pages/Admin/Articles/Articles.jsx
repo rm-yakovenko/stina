@@ -5,7 +5,6 @@ import Box from '@material-ui/core/Box';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import { HeadingH6 } from 'components/Typography';
-import Article from 'components/Article';
 import {
   useArticlesDispatch,
   useAriclesState,
@@ -16,12 +15,11 @@ import {
 } from 'components/useArticles';
 import { useCategories } from 'pages/MainPage/categories';
 import { RoundIconButton } from 'components/Buttons';
-import AddArticleForm from './Form';
 import Tabs from './Tabs';
+import EditArticlePopup from './EditArticlePopup';
+import CreateArticle from './CreateArticle';
 import { ArticlesContainer } from '../style';
 import {
-  ArticlePreviewContainer,
-  CreateArticleContainer,
   CategoriesContainer,
   CategoryContainer,
   CategoryHeader,
@@ -44,18 +42,17 @@ function populateCategories(categories, articles = []) {
 }
 
 function Articles() {
-  const [isPreviewVisible, setPreviewVisible] = useState(false);
-  const [previewValues, setPreviewValues] = useState({});
   const [currentCategory, setCurrentCategory] = useState(null);
+  const [currentArticle, setCurrentArticle] = useState(null);
   const categories = useCategories();
   const articleDispatch = useArticlesDispatch();
   const { articles } = useAriclesState();
+  const [isEditModalOpen, setEditModalOpen] = useState(false);
 
   const { path, url, isExact } = useRouteMatch();
 
-  const handleShowPreview = (values) => {
-    setPreviewValues(values);
-    setPreviewVisible(true);
+  const toggleEditModal = () => {
+    setEditModalOpen(!isEditModalOpen);
   };
 
   const handleAddArticle = async (data) => {
@@ -82,6 +79,14 @@ function Articles() {
     await deleteArticle(articleDispatch, article.id);
   };
 
+  const handleEditArticle = async (article) => {
+    const updatedArticle = {
+      ...article,
+      id: currentArticle.id,
+    };
+    await editArticle(articleDispatch, updatedArticle, currentArticle.id);
+  };
+
   useEffect(() => {
     getArticles(articleDispatch);
   }, []);
@@ -93,16 +98,10 @@ function Articles() {
   const articlPagesSwitch = (
     <Switch>
       <Route path={`${path}/create`}>
-        <CreateArticleContainer>
-          <AddArticleForm
-            onShowPreview={handleShowPreview}
-            onAddArticle={handleAddArticle}
-            categories={categories}
-          />
-          <ArticlePreviewContainer>
-            <Article articleData={previewValues} />
-          </ArticlePreviewContainer>
-        </CreateArticleContainer>
+        <CreateArticle
+          categories={categories}
+          onAddArticle={handleAddArticle}
+        />
       </Route>
       <Route path={`${path}/list`}>
         <CategoriesContainer>
@@ -129,7 +128,13 @@ function Articles() {
                             <DeleteIcon />
                           </RoundIconButton>
                         </Box>
-                        <RoundIconButton type="button" onClick={() => {}}>
+                        <RoundIconButton
+                          type="button"
+                          onClick={() => {
+                            toggleEditModal();
+                            setCurrentArticle(article);
+                          }}
+                        >
                           <EditIcon />
                         </RoundIconButton>
                       </Box>
@@ -139,6 +144,13 @@ function Articles() {
               </Collapse>
             </CategoryContainer>
           ))}
+          <EditArticlePopup
+            open={isEditModalOpen}
+            onClose={toggleEditModal}
+            categories={categories}
+            article={currentArticle}
+            onEditArticle={handleEditArticle}
+          />
         </CategoriesContainer>
       </Route>
     </Switch>

@@ -9,7 +9,7 @@ import Box from '@material-ui/core/Box';
 
 import { MainContainer, StyledImage } from './style';
 
-function Article({ articleData }) {
+function Article({ articleData = {} }) {
   const theme = useTheme();
   const matchesSm = useMediaQuery(theme.breakpoints.down('sm'));
 
@@ -26,7 +26,7 @@ function Article({ articleData }) {
         return <Body1>{t(block.value)}</Body1>;
       case 'image':
         return (
-          <Box padding="20px">
+          <Box padding="20px" display="flex" justifyContent="center">
             <StyledImage src={block.value} />
           </Box>
         );

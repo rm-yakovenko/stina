@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
+import Modal from '@material-ui/core/Modal';
 import * as colors from 'theme/colors';
 
 export const FormContainer = styled.div`
@@ -73,4 +75,27 @@ export const ArticleThumbContainer = styled.div`
 export const StyledImage = styled.img`
   width: 100%;
   height: auto;
+`;
+
+export const StyledModal = styled(Modal)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 100px !important;
+`;
+
+export const StyledModalBody = styled.div`
+  position: relative;
+  background: white;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+`;
+
+export const StyledCloseIcon = styled(CloseIcon)`
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  cursor: pointer;
 `;

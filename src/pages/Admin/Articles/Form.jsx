@@ -18,12 +18,23 @@ function getCategoriesOptions(categories) {
   }));
 }
 
-function AddArticleForm({ onShowPreview, categories, onAddArticle }) {
+function AddArticleForm({
+  onShowPreview,
+  categories,
+  onAddArticle,
+  onEditArticle,
+  article,
+}) {
   const handleFormSubmit = async (values, props) => {
     const articleBody = {
       ...values,
       categories: values.categories.map((category) => category.value),
     };
+
+    if (article) {
+      await onEditArticle(articleBody);
+      return;
+    }
 
     await onAddArticle(articleBody);
     props.resetForm();
@@ -37,10 +48,14 @@ function AddArticleForm({ onShowPreview, categories, onAddArticle }) {
     <Formik
       validateOnChange
       initialValues={{
-        categories: null,
-        thumb: '',
-        header: '',
-        blocks: [],
+        categories: article
+          ? getCategoriesOptions(categories).filter((cat) =>
+              article.categories.includes(cat.value),
+            )
+          : null,
+        thumb: article ? article.thumb : '',
+        header: article ? article.header : '',
+        blocks: article ? article.blocks : [],
       }}
       onSubmit={handleFormSubmit}
     >
