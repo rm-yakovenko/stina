@@ -14,4 +14,9 @@ export const routes = [
     name: 'Articles',
     link: '/admin/articles',
   },
+  {
+    id: 4,
+    name: 'Transport',
+    link: '/admin/transport',
+  },
 ];

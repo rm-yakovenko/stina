@@ -10,6 +10,7 @@ import Sidebar from './Sidebar';
 import Videos from './Videos/Videos';
 import Places from './Places/Places';
 import Articles from './Articles/Articles';
+import Transport from './Transport/Transport';
 import { PageContainer } from './style';
 
 function Admin() {
@@ -31,6 +32,9 @@ function Admin() {
       </Route>
       <Route path={`${path}/articles`}>
         <Articles />
+      </Route>
+      <Route path={`${path}/transport`}>
+        <Transport />
       </Route>
     </Switch>
   );

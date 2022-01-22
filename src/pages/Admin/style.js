@@ -16,6 +16,10 @@ export const ArticlesContainer = styled.div`
   width: 100%;
 `;
 
+export const TransportsContainer = styled.div`
+  width: 100%;
+`;
+
 export const VideosContainer = styled.div`
   width: 100%;
   padding: 20px;
