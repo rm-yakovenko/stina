@@ -1,4 +1,6 @@
 import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+
 import {
   getFirestore,
   collection,
@@ -30,6 +32,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth();
 
 const db = getFirestore();
 
@@ -96,4 +99,12 @@ export async function deleteDocument(collectionName, id) {
 
 export async function deleteDocumentFromSubCollection(subCollectionRoute, id) {
   await deleteDoc(doc(db, subCollectionRoute, id));
+}
+
+export async function signIn(email, password) {
+  await signInWithEmailAndPassword(auth, email, password);
+}
+
+export async function userSignOut() {
+  await signOut(auth);
 }

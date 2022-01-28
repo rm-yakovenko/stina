@@ -12,3 +12,9 @@ export const MapCategoryButton = styled(IconButton)`
 export const RoundIconButton = styled(IconButton)`
   background: ${colors.lightBlue} !important;
 `;
+
+export const RoundIconButtonInverted = styled(IconButton)`
+  background: white !important;
+  width: 50px;
+  height: 50px;
+`;

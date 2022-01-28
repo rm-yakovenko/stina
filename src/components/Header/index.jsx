@@ -3,6 +3,7 @@ import logo from 'assets/logo.png';
 import hut from 'assets/hut.png';
 import { HeadingLinks } from 'components/Typography';
 import { useTranslation } from 'react-i18next';
+import AdminButton from 'pages/Admin/AdminButton';
 import Language from './Language';
 import {
   HeaderContainer,
@@ -60,9 +61,7 @@ function Header({ topContainerRef }) {
         <StyledLink to="#">
           <HeadingLinks>{t('navLink3')}</HeadingLinks>
         </StyledLink>
-        <StyledLink to="/admin">
-          <HeadingLinks>Admin</HeadingLinks>
-        </StyledLink>
+        <AdminButton />
       </LinksContainer>
     </HeaderContainer>
   );

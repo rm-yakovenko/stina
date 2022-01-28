@@ -4,6 +4,7 @@ import Spinner from 'components/Spinner';
 import { VideosProvider } from 'components/useVideos';
 import { PlacesProvider } from 'components/usePlaces';
 import { ArticlesProvider } from 'components/useArticles';
+import { AuthProvider } from 'components/useAuth';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'index.css';
@@ -12,13 +13,15 @@ import './i18n';
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<Spinner />}>
-      <ArticlesProvider>
-        <PlacesProvider>
-          <VideosProvider>
-            <App />
-          </VideosProvider>
-        </PlacesProvider>
-      </ArticlesProvider>
+      <AuthProvider>
+        <ArticlesProvider>
+          <PlacesProvider>
+            <VideosProvider>
+              <App />
+            </VideosProvider>
+          </PlacesProvider>
+        </ArticlesProvider>
+      </AuthProvider>
     </Suspense>
   </React.StrictMode>,
   document.getElementById('root'),

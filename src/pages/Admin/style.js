@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Menu from '@material-ui/core/Menu';
 import * as colors from 'theme/colors';
 
 export const PageContainer = styled.div`
@@ -17,6 +18,10 @@ export const ArticlesContainer = styled.div`
 `;
 
 export const TransportsContainer = styled.div`
+  width: 100%;
+`;
+
+export const UsersContainer = styled.div`
   width: 100%;
 `;
 
@@ -51,4 +56,8 @@ export const VideoContainer = styled.div`
 export const VideoGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+`;
+
+export const StyledMenu = styled(Menu)`
+  z-index: 10000 !important;
 `;

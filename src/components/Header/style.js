@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import * as colors from 'theme/colors';
 
 export const HeaderContainer = styled.div`
+  width: 100vw;
   display: flex;
   justify-content: flex-end;
   position: fixed;
@@ -19,7 +20,7 @@ export const HeaderContainer = styled.div`
 export const LogoContainer = styled.div`
   position: fixed;
   top: ${(props) => (props.isScrolling ? '-18px' : '10px')};
-  left: 50%;
+  left: 50vw;
   transform: translateX(-50%);
   width: 120px;
   height: 120px;
