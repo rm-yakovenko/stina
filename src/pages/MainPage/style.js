@@ -242,6 +242,9 @@ export const StyledYouTubeIcon = styled(YouTubeIcon)`
   position: absolute;
   color: white;
   opacity: 0.7;
+  font-size: 100px !important;
+  transform: ${(props) => props.$isHover && 'scale(1.3) rotate(0.02deg)'};
+  transition: all 0.5s !important;
 `;
 
 export const StyledMapPopup = styled(Popup)`

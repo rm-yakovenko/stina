@@ -44,7 +44,7 @@ function VideosSlider() {
                   src={getVideoPreviewImg(video.url)}
                   isHover={currentSlide?.id === video.id}
                 />
-                <StyledYouTubeIcon style={{ fontSize: 100 }} />
+                <StyledYouTubeIcon $isHover={currentSlide?.id === video.id} />
               </StyledSwiperVideoSlide>
             </SwiperSlide>
           ))}
