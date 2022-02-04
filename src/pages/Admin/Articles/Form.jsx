@@ -7,6 +7,7 @@ import AddIcon from '@material-ui/icons/Add';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Box from '@material-ui/core/Box';
 import { RoundIconButton } from 'components/Buttons';
+import { HeadingH6 } from 'components/Typography/style';
 import { generate } from 'shortid';
 
 import { FormContainer } from './style';
@@ -54,7 +55,14 @@ function AddArticleForm({
             )
           : null,
         thumb: article ? article.thumb : '',
-        header: article ? article.header : '',
+        header: {
+          uk: article ? article.header.uk : '',
+          en: article ? article.header.en : '',
+        },
+        description: {
+          uk: article ? article.description.uk : '',
+          en: article ? article.description.en : '',
+        },
         blocks: article ? article.blocks : [],
       }}
       onSubmit={handleFormSubmit}
@@ -75,9 +83,41 @@ function AddArticleForm({
             <Box marginBottom="10px">
               <CustomTextField label="Thumb image" name="thumb" type="text" />
             </Box>
-            <Box marginBottom="10px">
-              <CustomTextField label="Header" name="header" type="text" />
+
+            <Box marginBottom="10px" display="flex" width="100%">
+              <Box width="44%" marginRight="5px">
+                <HeadingH6>UA</HeadingH6>
+                <CustomTextField label="Header" name="header.uk" type="text" />
+              </Box>
+              <Box width="44%">
+                <HeadingH6>EN</HeadingH6>
+                <CustomTextField label="Header" name="header.en" type="text" />
+              </Box>
             </Box>
+
+            <Box marginBottom="10px" display="flex" width="100%">
+              <Box width="44%" marginRight="5px">
+                <CustomTextField
+                  label="Short description"
+                  name="description.uk"
+                  type="text"
+                  multiline
+                  rows={6}
+                  rowsMax={6}
+                />
+              </Box>
+              <Box width="44%">
+                <CustomTextField
+                  label="Short description"
+                  name="description.en"
+                  type="text"
+                  multiline
+                  rows={6}
+                  rowsMax={6}
+                />
+              </Box>
+            </Box>
+
             <FieldArray name="blocks">
               {({ push }) => (
                 <>
@@ -88,11 +128,36 @@ function AddArticleForm({
                       display="flex"
                       alignItems="center"
                     >
-                      <CustomTextField
-                        label={block.type}
-                        name={`blocks[${index}].value`}
-                        type="text"
-                      />
+                      {block.type === 'text' ? (
+                        <Box display="flex">
+                          <Box marginRight="5px">
+                            <CustomTextField
+                              label={block.type}
+                              name={`blocks[${index}].value.uk`}
+                              type="text"
+                              multiline
+                              rows={6}
+                              rowsMax={6}
+                            />
+                          </Box>
+                          <Box>
+                            <CustomTextField
+                              label={block.type}
+                              name={`blocks[${index}].value.en`}
+                              type="text"
+                              multiline
+                              rows={6}
+                              rowsMax={6}
+                            />
+                          </Box>
+                        </Box>
+                      ) : (
+                        <CustomTextField
+                          label={block.type}
+                          name={`blocks[${index}].value`}
+                          type="text"
+                        />
+                      )}
                       <Box marginLeft="10px">
                         <RoundIconButton
                           type="button"
@@ -115,7 +180,11 @@ function AddArticleForm({
                     <Button
                       type="button"
                       onClick={() =>
-                        push({ id: generate(), type: 'text', value: '' })
+                        push({
+                          id: generate(),
+                          type: 'text',
+                          value: { uk: '', en: '' },
+                        })
                       }
                     >
                       Add text

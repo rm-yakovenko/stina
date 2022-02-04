@@ -18,7 +18,7 @@ function Login() {
   const handleFormSubmit = async (values) => {
     try {
       await signIn(values.email, values.password);
-      history.push('/admin');
+      history.push('/gospodar');
     } catch (error) {
       console.log(error);
     }

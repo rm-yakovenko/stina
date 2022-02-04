@@ -1,11 +1,11 @@
 import React from 'react';
 import YouTube from 'react-youtube';
-import { useTranslation } from 'react-i18next';
 import { HeadingH4, Body1 } from 'components/Typography';
 import { extractYoutubeVideoId } from 'helpers/videoHelpers';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
+import useTranslation from 'hooks/useTranslation';
 
 import { MainContainer, StyledImage } from './style';
 
@@ -18,7 +18,7 @@ function Article({ articleData = {} }) {
     width: matchesSm ? '462' : '854',
   };
 
-  const { t } = useTranslation();
+  const t = useTranslation();
 
   const renderArticleBlock = (block) => {
     switch (block.type) {
@@ -43,7 +43,7 @@ function Article({ articleData = {} }) {
 
   return (
     <MainContainer>
-      <HeadingH4>{articleData.header}</HeadingH4>
+      <HeadingH4>{t(articleData.header)}</HeadingH4>
       {articleData.blocks?.map((block) => renderArticleBlock(block))}
     </MainContainer>
   );

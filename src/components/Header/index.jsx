@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import logo from 'assets/logo.png';
 import hut from 'assets/hut.png';
+import useTranslation from 'hooks/useTranslation';
+import { mainPage } from 'strings/mainPage';
 import { HeadingLinks } from 'components/Typography';
-import { useTranslation } from 'react-i18next';
 import AdminButton from 'pages/Admin/AdminButton';
 import Language from './Language';
+
 import {
   HeaderContainer,
   LogoContainer,
@@ -18,7 +20,8 @@ import {
 function Header({ topContainerRef }) {
   const [isScrolling, setScrolling] = useState(false);
 
-  const { t } = useTranslation();
+  const t = useTranslation();
+  const strings = t(mainPage);
 
   const handleScroll = () => {
     if (window.scrollY >= 100 && !isScrolling) {
@@ -53,13 +56,13 @@ function Header({ topContainerRef }) {
       </LogoContainer>
       <LinksContainer>
         <StyledLink to="/eco-center">
-          <HeadingLinks>{t('navLink1')}</HeadingLinks>
+          <HeadingLinks>{strings.navLink1}</HeadingLinks>
         </StyledLink>
         <StyledLink to="/how-to-get">
-          <HeadingLinks>{t('navLink2')}</HeadingLinks>
+          <HeadingLinks>{strings.navLink2}</HeadingLinks>
         </StyledLink>
         <StyledLink to="#">
-          <HeadingLinks>{t('navLink3')}</HeadingLinks>
+          <HeadingLinks>{strings.navLink3}</HeadingLinks>
         </StyledLink>
         <AdminButton />
       </LinksContainer>

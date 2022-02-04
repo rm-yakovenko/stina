@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from '@material-ui/core/Link';
-import { useTranslation } from 'react-i18next';
 import chirchImage from 'assets/chirch.png';
 import facebookLogo from 'assets/facebook.png';
 import pangeyaLogo from 'assets/pangeya.png';
@@ -11,6 +10,8 @@ import { MapCategoryButton } from 'components/Buttons';
 import { HeadingH6, Body1 } from 'components/Typography';
 import { getVideos, useVideosDispatch } from 'components/useVideos';
 import { getPlaces, usePlacesDispatch } from 'components/usePlaces';
+import useTranslation from 'hooks/useTranslation';
+import { mainPage } from 'strings/mainPage';
 import CategoriesSlider from './CategoriesSlider';
 import VideosSlider from './VideosSlider';
 import LeafletMap from './LeafletMap';
@@ -36,7 +37,8 @@ import {
 
 function MainPage() {
   const [currentCategory, setCurrentCategory] = useState(null);
-  const { t } = useTranslation();
+  const t = useTranslation();
+  const strings = t(mainPage);
 
   const categoriesRef = useRef(null);
   const videosDispatch = useVideosDispatch();
@@ -63,7 +65,7 @@ function MainPage() {
         <StyledImage src={chirchImage} />
         <HeroTextContent>
           <Body1>
-            <i>{t('heroText')}</i>
+            <i>{strings.heroText}</i>
           </Body1>
         </HeroTextContent>
         <HeroBottomMenu>
@@ -99,7 +101,7 @@ function MainPage() {
         <StyledImage src={embroderyImage} />
         <LeftSideTextContent>
           <Body1>
-            <i>{t('embrText')}</i>
+            <i>{strings.embrText}</i>
           </Body1>
         </LeftSideTextContent>
       </ImageContainer>

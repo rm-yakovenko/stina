@@ -7,7 +7,7 @@ import Modal from '@material-ui/core/Modal';
 import * as colors from 'theme/colors';
 
 export const FormContainer = styled.div`
-  width: 300px;
+  width: 500px;
   padding: 20px;
 `;
 

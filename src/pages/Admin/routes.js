@@ -2,21 +2,21 @@ export const routes = [
   {
     id: 1,
     name: 'Videos',
-    link: '/admin/videos',
+    link: '/gospodar/videos',
   },
   {
     id: 2,
     name: 'Places',
-    link: '/admin/places',
+    link: '/gospodar/places',
   },
   {
     id: 3,
     name: 'Articles',
-    link: '/admin/articles',
+    link: '/gospodar/articles',
   },
   {
     id: 4,
     name: 'Transport',
-    link: '/admin/transport',
+    link: '/gospodar/transport',
   },
 ];

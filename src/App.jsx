@@ -45,7 +45,7 @@ function App() {
             <Route path="/product" component={Product} />
             <Route path="/propositions" component={Propositions} />
             <Route path="/wolunteering" component={Wolunteering} />
-            <Route path="/admin">
+            <Route path="/gospodar">
               {currentUser ? <Admin /> : <Redirect to="/login" />}
             </Route>
             <Route path="/login" component={Login} />

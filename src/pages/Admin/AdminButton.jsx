@@ -19,7 +19,7 @@ function AdminButton() {
 
   const handleGotoAdminPage = () => {
     handleClose();
-    history.push('/admin');
+    history.push('/gospodar');
   };
 
   const handleSignOut = async () => {

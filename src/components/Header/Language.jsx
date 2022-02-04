@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import i18next from 'i18next';
 import ukrFlag from 'assets/flags/ukraine.png';
 import britFlag from 'assets/flags/britan.png';
 import gerFlag from 'assets/flags/germany.png';
 import polFlag from 'assets/flags/poland.png';
+import useLocale from 'components/useLocale';
 import * as colors from 'theme/colors';
 import { LanguageContainer, FlagImage } from './style';
 
 const options = [
   { value: 'uk', label: <FlagImage src={ukrFlag} /> },
   { value: 'en', label: <FlagImage src={britFlag} /> },
-  { value: 'de', label: <FlagImage src={gerFlag} /> },
-  { value: 'pl', label: <FlagImage src={polFlag} /> },
+  //{ value: 'de', label: <FlagImage src={gerFlag} /> },
+  //{ value: 'pl', label: <FlagImage src={polFlag} /> },
 ];
 
 function Language() {
   const lan = localStorage.getItem('lan') || 'uk';
   const currentOption = options.find((option) => option.value === lan);
   const [language, setLanguage] = useState(currentOption);
+  const { setLocale } = useLocale();
 
   const handleChangelanguage = (option) => {
     setLanguage({ value: option.value, label: option.label });
-    i18next.changeLanguage(option.value);
+    setLocale(option.value);
     localStorage.setItem('lan', option.value);
   };
 

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
+import useTranslation from 'hooks/useTranslation';
 import Collapse from '@material-ui/core/Collapse';
 import Box from '@material-ui/core/Box';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -48,6 +49,8 @@ function Articles() {
   const articleDispatch = useArticlesDispatch();
   const { articles } = useAriclesState();
   const [isEditModalOpen, setEditModalOpen] = useState(false);
+
+  const t = useTranslation();
 
   const { path, url, isExact } = useRouteMatch();
 
@@ -116,7 +119,7 @@ function Articles() {
                   {category.articles.map((article) => (
                     <ArticleThumbContainer>
                       <StyledImage src={article.thumb} />
-                      <HeadingH6>{article.header}</HeadingH6>
+                      <HeadingH6>{t(article.header)}</HeadingH6>
                       <Box marginTop="10px" display="flex">
                         <Box marginRight="5px">
                           <RoundIconButton

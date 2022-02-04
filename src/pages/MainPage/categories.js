@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import breadImage from 'assets/bread.png';
 import accomodationImage from 'assets/accommodation.png';
 import productImage from 'assets/product.png';
@@ -8,88 +7,91 @@ import masterClassesImage from 'assets/workshops.png';
 import toursImage from 'assets/tours.png';
 import placesImage from 'assets/places.png';
 import propositionImage from 'assets/offer.png';
+import useTranslation from 'hooks/useTranslation';
+import { mainPage } from 'strings/mainPage';
 
 export const useCategories = () => {
-  const { t } = useTranslation();
+  const t = useTranslation();
+  const strings = t(mainPage);
 
   const categories = [
     {
       id: 1,
-      name: t('category1'),
-      nameFirst: t('category1First'),
-      nameSecond: t('category1Second'),
+      name: strings.category1,
+      nameFirst: strings.category1First,
+      nameSecond: strings.category1Second,
       image: breadImage,
       link: '/food',
       articles: [],
     },
     {
       id: 2,
-      name: t('category2'),
-      nameFirst: t('category2First'),
-      nameSecond: t('category2Second'),
+      name: strings.category2,
+      nameFirst: strings.category2First,
+      nameSecond: strings.category2Second,
       image: accomodationImage,
       link: '/acomodation',
       articles: [],
     },
     {
       id: 3,
-      name: t('category3'),
-      nameFirst: t('category3First'),
-      nameSecond: t('category3Second'),
+      name: strings.category3,
+      nameFirst: strings.category3First,
+      nameSecond: strings.category3Second,
       image: productImage,
       link: '/product',
       articles: [],
     },
     {
       id: 4,
-      name: t('category4'),
-      nameFirst: t('category4First'),
-      nameSecond: t('category4Second'),
+      name: strings.category4,
+      nameFirst: strings.category4First,
+      nameSecond: strings.category4Second,
       image: volunteeringImage,
       link: '/wolunteering',
       articles: [],
     },
     {
       id: 5,
-      name: t('category5'),
-      nameFirst: t('category5First'),
-      nameSecond: t('category5Second'),
+      name: strings.category5,
+      nameFirst: strings.category5First,
+      nameSecond: strings.category5Second,
       image: restImage,
       link: '/activerest',
       articles: [],
     },
     {
       id: 6,
-      name: t('category6'),
-      nameFirst: t('category6First'),
-      nameSecond: t('category6Second'),
+      name: strings.category6,
+      nameFirst: strings.category6First,
+      nameSecond: strings.category6Second,
       image: masterClassesImage,
       link: '/masterclasses',
       articles: [],
     },
     {
       id: 7,
-      name: t('category7'),
-      nameFirst: t('category7First'),
-      nameSecond: t('category7Second'),
+      name: strings.category7,
+      nameFirst: strings.category7First,
+      nameSecond: strings.category7Second,
       image: toursImage,
       link: '/complextours',
       articles: [],
     },
     {
       id: 8,
-      name: t('category8'),
-      nameFirst: t('category8First'),
-      nameSecond: t('category8Second'),
+      name: strings.category8,
+      nameFirst: strings.category8First,
+      nameSecond: strings.category8Second,
       image: placesImage,
       link: '/interestplaces',
       articles: [],
     },
     {
       id: 9,
-      name: t('category9'),
-      nameFirst: t('category9First'),
-      nameSecond: t('category9Second'),
+      name: strings.category9,
+      nameFirst: strings.category9First,
+      nameSecond: strings.category9Second,
       image: propositionImage,
       link: '/propositions',
       articles: [],

@@ -31,5 +31,5 @@ export const FormContainer = styled.div`
   padding: 10px;
   display: flex;
   flex-direction: column;
-  width: 30%;
+  width: 40%;
 `;

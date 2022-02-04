@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import PlaceCard from 'components/PlaceCard';
 import { useCategoriesMap } from 'pages/MainPage/categoriesMap';
 import {
@@ -35,7 +34,6 @@ function Places() {
   const [isEditFormOpen, setEditFormOpen] = useState(false);
   const [currentPlace, setCurrentPlace] = useState(null);
   const [currentCategory, setCurrentCategory] = useState(null);
-  const { t } = useTranslation();
 
   const handleAddPlace = async (values) => {
     const placeRoute = `places/${values.category.value}/places`;
@@ -64,11 +62,7 @@ function Places() {
   };
 
   const handleShowPreview = (values) => {
-    const previewVal = {
-      ...values,
-      name: t(values.name),
-    };
-    setPreviewValues(previewVal);
+    setPreviewValues(values);
     setPreviewVisible(true);
   };
 

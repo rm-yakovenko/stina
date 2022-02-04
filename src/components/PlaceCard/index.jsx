@@ -1,5 +1,8 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+//import { useTranslation } from 'react-i18next';
+import useTranslation from 'hooks/useTranslation';
+import { mainPage } from 'strings/mainPage';
+
 import { Link } from 'react-router-dom';
 import { Subtitle1 } from 'components/Typography';
 
@@ -12,7 +15,9 @@ import {
 } from './style';
 
 function PlaceCard({ placeData, size }) {
-  const { t } = useTranslation();
+  const t = useTranslation();
+  const strings = t(mainPage);
+  console.log(placeData.name);
 
   const countSize = (containerSize) => {
     switch (containerSize) {
@@ -28,7 +33,7 @@ function PlaceCard({ placeData, size }) {
   return (
     <MainContainer>
       <HeadingContainer>
-        <Subtitle1>{placeData.name}</Subtitle1>
+        <Subtitle1>{t(placeData.name)}</Subtitle1>
       </HeadingContainer>
       <ImageContainer size={countSize(size)}>
         <StyledImage src={placeData.imageUrl} />
@@ -36,7 +41,7 @@ function PlaceCard({ placeData, size }) {
       <LinkContainer>
         {placeData.pageLink && (
           <Subtitle1>
-            <Link to={placeData.pageLink}>{t('readMore')}</Link>
+            <Link to={placeData.pageLink}>{strings.readMore}</Link>
           </Subtitle1>
         )}
       </LinkContainer>
