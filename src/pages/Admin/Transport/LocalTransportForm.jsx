@@ -14,8 +14,20 @@ const validationSchema = yup.object().shape({
   name: yup.mixed().required('Please provide name'),
 });
 
-function LocalTransportForm({ addTransport, transport = null, onEdit }) {
+function LocalTransportForm({
+  onAddTransport,
+  transport = null,
+  onEditTransport,
+  onCloseModal,
+}) {
   const handleFormSubmit = async (values, props) => {
+    if (transport) {
+      await onEditTransport(values, transport.id);
+      onCloseModal();
+      return;
+    }
+
+    await onAddTransport(values);
     props.resetForm();
   };
 
@@ -46,19 +58,11 @@ function LocalTransportForm({ addTransport, transport = null, onEdit }) {
             <Box marginBottom="10px" display="flex" width="100%">
               <Box width="44%" marginRight="5px">
                 <HeadingH6>UA</HeadingH6>
-                <CustomTextField
-                  label="Place name"
-                  name="name.uk"
-                  type="text"
-                />
+                <CustomTextField label="Name" name="name.uk" type="text" />
               </Box>
               <Box width="44%">
                 <HeadingH6>EN</HeadingH6>
-                <CustomTextField
-                  label="Place name"
-                  name="name.en"
-                  type="text"
-                />
+                <CustomTextField label="Name" name="name.en" type="text" />
               </Box>
             </Box>
             <Box marginBottom="10px" width="89%">
@@ -74,7 +78,7 @@ function LocalTransportForm({ addTransport, transport = null, onEdit }) {
               </Box>
               <Box width="44%">
                 <CustomTextField
-                  label="Place name"
+                  label="Transport type"
                   name="type.en"
                   type="text"
                 />
