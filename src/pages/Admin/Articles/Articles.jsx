@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  useRouteMatch,
+  Redirect,
+  useHistory,
+} from 'react-router-dom';
 import useTranslation from 'hooks/useTranslation';
 import Collapse from '@material-ui/core/Collapse';
 import Box from '@material-ui/core/Box';
@@ -49,6 +55,7 @@ function Articles() {
   const articleDispatch = useArticlesDispatch();
   const { articles } = useAriclesState();
   const [isEditModalOpen, setEditModalOpen] = useState(false);
+  const history = useHistory();
 
   const t = useTranslation();
 
@@ -106,6 +113,13 @@ function Articles() {
           onAddArticle={handleAddArticle}
         />
       </Route>
+      <Route path={`${path}/list/edit`}>
+        <CreateArticle
+          categories={categories}
+          onEditArticle={handleEditArticle}
+          article={currentArticle}
+        />
+      </Route>
       <Route path={`${path}/list`}>
         <CategoriesContainer>
           {populateCategories(categories, articles).map((category) => (
@@ -134,8 +148,9 @@ function Articles() {
                         <RoundIconButton
                           type="button"
                           onClick={() => {
-                            toggleEditModal();
+                            //toggleEditModal();
                             setCurrentArticle(article);
+                            history.push('/gospodar/articles/list/edit');
                           }}
                         >
                           <EditIcon />
