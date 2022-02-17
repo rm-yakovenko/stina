@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Article from 'components/Article';
 import AddArticleForm from './Form';
+import ArticlePopup from './ArticlePopup';
 import { ArticlePreviewContainer, CreateArticleContainer } from './style';
 
 function CreateArticle({ categories, onAddArticle, onEditArticle, article }) {
@@ -21,9 +22,14 @@ function CreateArticle({ categories, onAddArticle, onEditArticle, article }) {
         categories={categories}
         article={article}
       />
-      <ArticlePreviewContainer>
-        <Article articleData={previewValues} />
-      </ArticlePreviewContainer>
+      <ArticlePopup
+        open={isPreviewVisible}
+        onClose={() => setPreviewVisible(false)}
+      >
+        <ArticlePreviewContainer>
+          <Article articleData={previewValues} />
+        </ArticlePreviewContainer>
+      </ArticlePopup>
     </CreateArticleContainer>
   );
 }

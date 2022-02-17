@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from '@material-ui/core/Link';
-import chirchImage from 'assets/chirch.png';
+import romaImage from 'assets/roma.jpg';
 import facebookLogo from 'assets/facebook.png';
 import pangeyaLogo from 'assets/pangeya.png';
 import yutubeLogo from 'assets/ytube.png';
@@ -8,12 +8,12 @@ import gphotosLogo from 'assets/gphotos.png';
 import embroderyImage from 'assets/embrodery.png';
 import { MapCategoryButton } from 'components/Buttons';
 import { HeadingH6, Body1 } from 'components/Typography';
+import VideosSlider from 'components/VideosSlider';
 import { getVideos, useVideosDispatch } from 'components/useVideos';
 import { getPlaces, usePlacesDispatch } from 'components/usePlaces';
 import useTranslation from 'hooks/useTranslation';
 import { mainPage } from 'strings/mainPage';
 import CategoriesSlider from './CategoriesSlider';
-import VideosSlider from './VideosSlider';
 import LeafletMap from './LeafletMap';
 import { useCategoriesMap } from './categoriesMap';
 import {
@@ -31,7 +31,6 @@ import {
   StyledMap,
   MapCategoryItem,
   StyledLocationIcon,
-  VideoSliderContainer,
   SocialImageYtube,
 } from './style';
 
@@ -62,7 +61,7 @@ function MainPage() {
   return (
     <MainPageContainer>
       <ImageContainer>
-        <StyledImage src={chirchImage} />
+        <StyledImage src={romaImage} />
         <HeroTextContent>
           <Body1>
             <i>{strings.heroText}</i>
@@ -123,9 +122,7 @@ function MainPage() {
           ))}
         </MapCategoriesContainer>
       </MapContainer>
-      <VideoSliderContainer>
-        <VideosSlider />
-      </VideoSliderContainer>
+      <VideosSlider />
     </MainPageContainer>
   );
 }

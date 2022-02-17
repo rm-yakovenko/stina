@@ -23,7 +23,6 @@ import {
 import { useCategories } from 'pages/MainPage/categories';
 import { RoundIconButton } from 'components/Buttons';
 import Tabs from './Tabs';
-import EditArticlePopup from './EditArticlePopup';
 import CreateArticle from './CreateArticle';
 import { ArticlesContainer } from '../style';
 import {
@@ -54,16 +53,11 @@ function Articles() {
   const categories = useCategories();
   const articleDispatch = useArticlesDispatch();
   const { articles } = useAriclesState();
-  const [isEditModalOpen, setEditModalOpen] = useState(false);
   const history = useHistory();
 
   const t = useTranslation();
 
   const { path, url, isExact } = useRouteMatch();
-
-  const toggleEditModal = () => {
-    setEditModalOpen(!isEditModalOpen);
-  };
 
   const handleAddArticle = async (data) => {
     await addArticle(articleDispatch, data);
@@ -113,7 +107,7 @@ function Articles() {
           onAddArticle={handleAddArticle}
         />
       </Route>
-      <Route path={`${path}/list/edit`}>
+      <Route path={`${path}/edit`}>
         <CreateArticle
           categories={categories}
           onEditArticle={handleEditArticle}
@@ -148,9 +142,8 @@ function Articles() {
                         <RoundIconButton
                           type="button"
                           onClick={() => {
-                            //toggleEditModal();
                             setCurrentArticle(article);
-                            history.push('/gospodar/articles/list/edit');
+                            history.push('/gospodar/articles/edit');
                           }}
                         >
                           <EditIcon />
@@ -162,13 +155,6 @@ function Articles() {
               </Collapse>
             </CategoryContainer>
           ))}
-          <EditArticlePopup
-            open={isEditModalOpen}
-            onClose={toggleEditModal}
-            categories={categories}
-            article={currentArticle}
-            onEditArticle={handleEditArticle}
-          />
         </CategoriesContainer>
       </Route>
     </Switch>

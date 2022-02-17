@@ -30,7 +30,7 @@ function Language() {
   const customStyles = {
     control: (provided) => ({
       ...provided,
-      backgroundColor: colors.lightBlue,
+      backgroundColor: 'transparent',
       border: 'none',
       boxShadow: 'none',
     }),
