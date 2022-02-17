@@ -21,6 +21,7 @@ import 'swiper/swiper.min.css';
 function VideosSlider() {
   const swiperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(null);
+  const [currentModalVideo, setCurrentModalVideo] = useState(null);
   const { videos } = useVideosState();
 
   const [isYouTubeModalOpen, setYouTubeModalOpen] = useState(false);
@@ -38,7 +39,7 @@ function VideosSlider() {
               <StyledSwiperVideoSlide
                 onMouseEnter={() => setCurrentSlide(video)}
                 onMouseLeave={() => setCurrentSlide(null)}
-                onClick={toggleYuuTubeModal}
+                onClick={() => {setCurrentModalVideo(video); toggleYuuTubeModal();}}
               >
                 <VideoImage
                   src={getVideoPreviewImg(video.url)}
@@ -65,7 +66,7 @@ function VideosSlider() {
       <YouTubeModal
         open={isYouTubeModalOpen}
         onClose={toggleYuuTubeModal}
-        currentVideo={currentSlide}
+        currentVideo={currentModalVideo}
       />
     </>
   );
