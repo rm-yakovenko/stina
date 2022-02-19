@@ -1,5 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import VideosSlider from 'components/VideosSlider';
+import {
+  HeadingH4,
+  HeadingH5,
+  HeadingH6,
+  Subtitle1Bold,
+} from 'components/Typography';
+import useTranslation from 'hooks/useTranslation';
+import { ecoCenter } from 'strings/ecoCenter';
 import facebookLogo from 'assets/facebook.png';
 import pangeyaLogo from 'assets/pangeya.png';
 import yutubeLogo from 'assets/ytube.png';
@@ -10,8 +18,9 @@ import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import arrowImage from 'assets/arrow.png';
-import { slides } from './slides';
-import { people } from './people';
+import usePeople from './usePeople';
+import useSlides from './slides';
+
 import {
   PageContainer,
   TopContainer,
@@ -31,12 +40,18 @@ import {
   SwiperContainer,
   PeopleContainer,
   StyledCollapse,
+  TeamHeadingContainer,
+  StyledCollapseBody,
 } from './style';
 
 function EcoCenter() {
   const swiperRef = useRef(null);
   const defaultSlideIndex = 0;
   const [currentSlide, setCurrentSlide] = useState(defaultSlideIndex);
+  const people = usePeople();
+  const slides = useSlides();
+  const t = useTranslation();
+  const strings = t(ecoCenter);
 
   useEffect(() => {
     if (!swiperRef) {
@@ -124,7 +139,9 @@ function EcoCenter() {
               <MozaicSlideContainer>
                 <Image src={slide.src} />
                 <StyledCollapse in={slide.id === currentSlide}>
-                  {slide.text}
+                  <StyledCollapseBody>
+                    <Subtitle1Bold>{slide.text}</Subtitle1Bold>
+                  </StyledCollapseBody>
                 </StyledCollapse>
               </MozaicSlideContainer>
             </SwiperSlide>
@@ -139,9 +156,23 @@ function EcoCenter() {
           />
         </SliderNext>
       </SwiperContainer>
+      <TeamHeadingContainer>
+        <HeadingH4>{strings.teamHead}</HeadingH4>
+      </TeamHeadingContainer>
       <PeopleContainer>
         {people.map((person) => (
-          <PersonImage src={person.src} />
+          <Box
+            display="flex"
+            flexDirection="column"
+            width="19%"
+            alignItems="center"
+          >
+            <PersonImage src={person.src} />
+            <Box marginTop="10px">
+              <HeadingH5>{person.name}</HeadingH5>
+            </Box>
+            <HeadingH6>{person.role}</HeadingH6>
+          </Box>
         ))}
       </PeopleContainer>
       <VideosSlider />

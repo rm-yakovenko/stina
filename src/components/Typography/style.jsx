@@ -57,6 +57,13 @@ export const Subtitle1 = styled((props) => (
   font-weight: 500 !important;
 `;
 
+export const Subtitle1Bold = styled((props) => (
+  <Typography variant="subtitle1" {...props} />
+))`
+  font-family: 'Raleway', sans-serif !important;
+  font-weight: 600 !important;
+`;
+
 export const Subtitle2 = styled((props) => (
   <Typography variant="subtitle2" {...props} />
 ))`

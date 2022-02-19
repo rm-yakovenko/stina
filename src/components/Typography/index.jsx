@@ -8,6 +8,7 @@ export {
   HeadingLinks,
   Subtitle1,
   Subtitle2,
+  Subtitle1Bold,
   Body1,
   Body2,
 } from './style';

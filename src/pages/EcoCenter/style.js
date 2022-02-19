@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Collapse from '@material-ui/core/Collapse';
 import * as colors from 'theme/colors';
 
 export const PageContainer = styled.div`
@@ -114,19 +113,40 @@ export const PeopleContainer = styled.div`
 `;
 
 export const PersonImage = styled.img`
-  width: 15%;
+  width: 90%;
   height: auto;
   display: block;
 `;
 
 export const StyledCollapse = styled.div`
-  position: absolute;
-  top: 42%;
-  left: 0;
-  background: white;
-  width: ${(props) => (props.in ? '200px' : '0px')};
-  height: 100px;
-  transition: width 1s ease 0.3s;
-  z-index: 100;
-  overflow: hidden;
+  ${({ theme, ...props }) => `
+    position: absolute;
+    transform: translatey(-30%);
+    top: 50%;
+    left: 0;
+    background: transparent;
+    width: ${props.in ? '700px' : '0'};
+    height: 400px;
+    transition: width 1s ease 0.3s;
+    z-index: 100;
+    overflow: hidden;
+  `}
+`;
+
+export const StyledCollapseBody = styled.div`
+  width: 700px;
+  padding: 40px;
+  box-sizing: border-box;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+`;
+
+export const TeamHeadingContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  text-transform: uppercase;
+  box-sizing: border-box;
 `;
