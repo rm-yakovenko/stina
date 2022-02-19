@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import logo from 'assets/logo.png';
 import useTranslation from 'hooks/useTranslation';
@@ -16,15 +16,31 @@ import {
 } from './style';
 
 function Header() {
+  const [isScrolling, setScrolling] = useState(false);
   const t = useTranslation();
   const strings = t(mainPage);
 
   const history = useHistory();
 
+  const handleScroll = () => {
+    if (window.scrollY >= 100 && !isScrolling) {
+      setScrolling(true);
+    }
+
+    if (window.scrollY <= 100 && isScrolling) {
+      setScrolling(false);
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll);
+
   return (
-    <HeaderContainer>
-      <LogoContainer onClick={() => history.push('/')}>
-        <LogoImage src={logo} />
+    <HeaderContainer isScrolling={isScrolling}>
+      <LogoContainer
+        isScrolling={isScrolling}
+        onClick={() => history.push('/')}
+      >
+        <LogoImage src={logo} isScrolling={isScrolling} />
       </LogoContainer>
       <LinksContainer>
         <StyledLink to="/eco-center">
