@@ -1,5 +1,4 @@
 import React from 'react';
-//import { useTranslation } from 'react-i18next';
 import useTranslation from 'hooks/useTranslation';
 import { mainPage } from 'strings/mainPage';
 
@@ -17,7 +16,6 @@ import {
 function PlaceCard({ placeData, size }) {
   const t = useTranslation();
   const strings = t(mainPage);
-  console.log(placeData.name);
 
   const countSize = (containerSize) => {
     switch (containerSize) {

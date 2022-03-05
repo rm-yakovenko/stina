@@ -1,0 +1,10 @@
+export const SUCCESS_LOCAL = 'success-local';
+export const SUCCESS_HOWTOGET = 'success-how-to-get';
+export const ADD_LOCAL = 'add-local';
+export const ADD_HOWTOGET = 'add-how-to-get';
+export const EDIT_LOCAL = 'edit-local';
+export const EDIT_HOWTOGET = 'edit-how-to-get';
+export const DELETE_LOCAL = 'delete-local';
+export const DELETE_HOWTOGET = 'delete-how-to-get';
+export const ERROR_LOCAL = 'error-local';
+export const ERROR_HOWTOGET = 'error-how-to-get';

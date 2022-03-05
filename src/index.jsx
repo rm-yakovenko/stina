@@ -6,6 +6,7 @@ import { PlacesProvider } from 'components/usePlaces';
 import { ArticlesProvider } from 'components/useArticles';
 import { AuthProvider } from 'components/useAuth';
 import { LocaleProvider } from 'components/useLocale';
+import { TransportProvider } from 'components/useTransport';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'index.css';
@@ -13,17 +14,19 @@ import 'index.css';
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<Spinner />}>
-      <LocaleProvider>
-        <AuthProvider>
-          <ArticlesProvider>
-            <PlacesProvider>
-              <VideosProvider>
-                <App />
-              </VideosProvider>
-            </PlacesProvider>
-          </ArticlesProvider>
-        </AuthProvider>
-      </LocaleProvider>
+      <TransportProvider>
+        <LocaleProvider>
+          <AuthProvider>
+            <ArticlesProvider>
+              <PlacesProvider>
+                <VideosProvider>
+                  <App />
+                </VideosProvider>
+              </PlacesProvider>
+            </ArticlesProvider>
+          </AuthProvider>
+        </LocaleProvider>
+      </TransportProvider>
     </Suspense>
   </React.StrictMode>,
   document.getElementById('root'),

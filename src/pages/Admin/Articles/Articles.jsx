@@ -1,5 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
+import {
+  Switch,
+  Route,
+  useRouteMatch,
+  Redirect,
+  useHistory,
+} from 'react-router-dom';
 import useTranslation from 'hooks/useTranslation';
 import Collapse from '@material-ui/core/Collapse';
 import Box from '@material-ui/core/Box';
@@ -17,7 +23,6 @@ import {
 import { useCategories } from 'pages/MainPage/categories';
 import { RoundIconButton } from 'components/Buttons';
 import Tabs from './Tabs';
-import EditArticlePopup from './EditArticlePopup';
 import CreateArticle from './CreateArticle';
 import { ArticlesContainer } from '../style';
 import {
@@ -48,15 +53,11 @@ function Articles() {
   const categories = useCategories();
   const articleDispatch = useArticlesDispatch();
   const { articles } = useAriclesState();
-  const [isEditModalOpen, setEditModalOpen] = useState(false);
+  const history = useHistory();
 
   const t = useTranslation();
 
   const { path, url, isExact } = useRouteMatch();
-
-  const toggleEditModal = () => {
-    setEditModalOpen(!isEditModalOpen);
-  };
 
   const handleAddArticle = async (data) => {
     await addArticle(articleDispatch, data);
@@ -106,6 +107,13 @@ function Articles() {
           onAddArticle={handleAddArticle}
         />
       </Route>
+      <Route path={`${path}/edit`}>
+        <CreateArticle
+          categories={categories}
+          onEditArticle={handleEditArticle}
+          article={currentArticle}
+        />
+      </Route>
       <Route path={`${path}/list`}>
         <CategoriesContainer>
           {populateCategories(categories, articles).map((category) => (
@@ -134,8 +142,8 @@ function Articles() {
                         <RoundIconButton
                           type="button"
                           onClick={() => {
-                            toggleEditModal();
                             setCurrentArticle(article);
+                            history.push('/gospodar/articles/edit');
                           }}
                         >
                           <EditIcon />
@@ -147,13 +155,6 @@ function Articles() {
               </Collapse>
             </CategoryContainer>
           ))}
-          <EditArticlePopup
-            open={isEditModalOpen}
-            onClose={toggleEditModal}
-            categories={categories}
-            article={currentArticle}
-            onEditArticle={handleEditArticle}
-          />
         </CategoriesContainer>
       </Route>
     </Switch>

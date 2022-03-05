@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
-import YouTubeIcon from '@material-ui/icons/YouTube';
 import { Popup } from 'react-leaflet';
 
 export const MainPageContainer = styled.div``;
@@ -19,29 +18,31 @@ export const HeroTextContent = styled.div`
   align-items: center;
   justify-content: center;
   position: absolute;
-  top: 80px;
+  top: 0;
   right: 0;
   bottom: 100px;
-  width: 30%;
+  width: 32%;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.7);
+  box-sizing: border-box;
 `;
 
 export const HeroBottomMenu = styled.div`
   position: absolute;
-  left: 0;
   right: 0;
   bottom: 0;
   height: 100px;
+  width: 32%;
+  padding: 0 50px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: white;
-  opacity: 0.8;
+  justify-content: flex-end;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-sizing: border-box;
 `;
 
 export const SocialButtonsContainer = styled.div`
-  width: 30%;
+  width: 300px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -70,14 +71,6 @@ export const CategoryImage = styled.img`
   border-radius: 50%;
 `;
 
-export const VideoImage = styled.img`
-  width: 90%;
-  height: auto;
-  transform: ${(props) =>
-    props.isHover ? 'scale(1.1) rotate(0.02deg)' : 'scale(1)'};
-  transition: all 0.5s;
-`;
-
 export const ArrowImageLeft = styled.img`
   width: 90px;
   height: auto;
@@ -95,15 +88,6 @@ export const ArrowImageRight = styled.img`
 
 export const StyledSwiperSlide = styled.div`
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
-export const StyledSwiperVideoSlide = styled.div`
-  width: 100%;
-  height: 38vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -161,11 +145,6 @@ export const MapCategoryItem = styled.div`
 export const StyledLocationIcon = styled(LocationOnIcon)`
   color: ${(props) => (props.color ? props.color : 'red')};
   font-size: 35px !important;
-`;
-
-export const VideoSliderContainer = styled.div`
-  padding-top: 10px;
-  padding-bottom: 30px;
 `;
 
 export const SwiperContainer = styled.div`
@@ -236,15 +215,6 @@ export const CategoryLine = styled.div`
 export const MapBoxContainer = styled.div`
   width: 100%;
   height: 100%;
-`;
-
-export const StyledYouTubeIcon = styled(YouTubeIcon)`
-  position: absolute;
-  color: white;
-  opacity: 0.7;
-  font-size: 100px !important;
-  transform: ${(props) => props.$isHover && 'scale(1.3) rotate(0.02deg)'};
-  transition: all 0.5s !important;
 `;
 
 export const StyledMapPopup = styled(Popup)`

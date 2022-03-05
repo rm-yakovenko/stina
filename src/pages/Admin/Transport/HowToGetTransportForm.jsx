@@ -15,8 +15,20 @@ const validationSchema = yup.object().shape({
   description: yup.mixed().required('Please provide description'),
 });
 
-function HowToGetTransportForm({ addTransport, transport = null, onEdit }) {
+function HowToGetTransportForm({
+  onAddTransport,
+  transport = null,
+  onEditTransport,
+  onCloseModal,
+}) {
   const handleFormSubmit = async (values, props) => {
+    if (transport) {
+      await onEditTransport(values, transport.id);
+      onCloseModal();
+      return;
+    }
+
+    await onAddTransport(values);
     props.resetForm();
   };
 
