@@ -27,14 +27,15 @@ export const LogoContainer = styled.div`
   align-items: center;
   background-color: ${(props) => (props.isScrolling ? 'transparent' : 'white')};
   border-radius: 50%;
-  transition: all 0.2s;
+  box-shadow: ${(props) => (props.isScrolling ? 'none' : '0 5px 5px black')};
+  transition: all 0.1s ease;
 `;
 
 export const LogoImage = styled.img`
   width: ${(props) => (props.isScrolling ? '30%' : '47%')};
   height: auto;
   cursor: pointer;
-  transition: all 0.4s;
+  transition: all 0.1s ease;
 `;
 
 export const LinksContainer = styled.div`

@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Formik, Form } from 'formik';
 import CustomTextField from 'components/CustomTextField';
+import HeaderLight from 'components/HeaderLight';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import * as yup from 'yup';
@@ -25,37 +26,40 @@ function Login() {
   };
 
   return (
-    <PageContainer>
-      <FormContainer>
-        <Formik
-          validateOnChange
-          initialValues={{
-            email: '',
-            password: '',
-          }}
-          validationSchema={validationSchema}
-          onSubmit={handleFormSubmit}
-        >
-          {() => (
-            <Form>
-              <Box marginBottom="10px">
-                <CustomTextField label="Email" name="email" type="text" />
-              </Box>
-              <Box marginBottom="10px">
-                <CustomTextField
-                  label="Password"
-                  name="password"
-                  type="password"
-                />
-              </Box>
-              <Button color="primary" type="submit" variant="outlined">
-                Log In
-              </Button>
-            </Form>
-          )}
-        </Formik>
-      </FormContainer>
-    </PageContainer>
+    <>
+      <HeaderLight />
+      <PageContainer>
+        <FormContainer>
+          <Formik
+            validateOnChange
+            initialValues={{
+              email: '',
+              password: '',
+            }}
+            validationSchema={validationSchema}
+            onSubmit={handleFormSubmit}
+          >
+            {() => (
+              <Form>
+                <Box marginBottom="10px">
+                  <CustomTextField label="Email" name="email" type="text" />
+                </Box>
+                <Box marginBottom="10px">
+                  <CustomTextField
+                    label="Password"
+                    name="password"
+                    type="password"
+                  />
+                </Box>
+                <Button color="primary" type="submit" variant="outlined">
+                  Log In
+                </Button>
+              </Form>
+            )}
+          </Formik>
+        </FormContainer>
+      </PageContainer>
+    </>
   );
 }
 

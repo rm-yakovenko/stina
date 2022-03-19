@@ -1,4 +1,5 @@
 import React from 'react';
+import HeaderLight from 'components/HeaderLight';
 import {
   Switch,
   Route,
@@ -23,20 +24,23 @@ function Admin() {
   }
 
   const adminPagesSwitch = (
-    <Switch>
-      <Route path={`${path}/videos`}>
-        <Videos />
-      </Route>
-      <Route path={`${path}/places`}>
-        <Places />
-      </Route>
-      <Route path={`${path}/articles`}>
-        <Articles />
-      </Route>
-      <Route path={`${path}/transport`}>
-        <Transport />
-      </Route>
-    </Switch>
+    <>
+      <HeaderLight />
+      <Switch>
+        <Route path={`${path}/videos`}>
+          <Videos />
+        </Route>
+        <Route path={`${path}/places`}>
+          <Places />
+        </Route>
+        <Route path={`${path}/articles`}>
+          <Articles />
+        </Route>
+        <Route path={`${path}/transport`}>
+          <Transport />
+        </Route>
+      </Switch>
+    </>
   );
 
   return (

@@ -22,6 +22,7 @@ import {
 } from 'components/useArticles';
 import { useCategories } from 'pages/MainPage/categories';
 import { RoundIconButton } from 'components/Buttons';
+import { populateCategories } from 'helpers/populateArticles';
 import Tabs from './Tabs';
 import CreateArticle from './CreateArticle';
 import { ArticlesContainer } from '../style';
@@ -34,18 +35,6 @@ import {
   ArticleThumbContainer,
   StyledImage,
 } from './style';
-
-function populateCategories(categories, articles = []) {
-  const copyCategories = [...categories];
-
-  articles.forEach((article) =>
-    article.categories.forEach((categoryId) => {
-      const category = copyCategories.find((cat) => cat.id === categoryId);
-      category.articles.push(article);
-    }),
-  );
-  return copyCategories;
-}
 
 function Articles() {
   const [currentCategory, setCurrentCategory] = useState(null);

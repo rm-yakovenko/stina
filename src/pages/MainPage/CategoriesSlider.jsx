@@ -37,7 +37,7 @@ function CategoriesSlider() {
             <StyledSwiperSlide
               onMouseEnter={() => setCurrentSlide(category.id)}
               onMouseLeave={() => setCurrentSlide(null)}
-              onClick={() => history.push(category.link)}
+              onClick={() => history.push(`/category/${category.id}`)}
             >
               <CategoryNameTop isHover={currentSlide === category.id}>
                 <HeadingH5>{category.nameFirst}</HeadingH5>

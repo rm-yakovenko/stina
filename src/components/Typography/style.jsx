@@ -47,7 +47,7 @@ export const HeadingH6 = styled((props) => (
 export const HeadingLinks = styled(Typography)`
   font-size: 18px !important;
   font-family: 'Raleway', sans-serif !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 `;
 
 export const Subtitle1 = styled((props) => (
