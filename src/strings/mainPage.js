@@ -45,6 +45,8 @@ export const mainPage = {
     category9First: 'Особливі',
     category9Second: 'пропозиції',
     readMore: 'Читати більше...',
+    about:
+      'Стіна, це загадкове село на півдні Вінниччини, що ховається по-між лабіринтів вуличок і балок вздовж звивистого каньйону річки Русава. Тут час наче зупинився, а місцеві традиції оберігаються як найцінніше. Ми запрошуємо вас відчути неповторну атмосферу та щедрість стінянського краю',
   },
   en: {
     heroText:
@@ -92,5 +94,7 @@ export const mainPage = {
     category9First: 'Special',
     category9Second: 'offers',
     readMore: 'Read more ...',
+    about:
+      'Stina is a mysterious village in the South of Vinnytsia region that lurks among labyrinths of streets and gaps along the windy canyon of Rusava river. It seems the time has stopped here and local traditions are preserved as the most precious things. We invite you to experience the remarkable atmosphere and hospitality of the Stina countryside',
   },
 };

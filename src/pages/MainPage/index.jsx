@@ -1,14 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Link from '@material-ui/core/Link';
+import { useHistory } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import romaImage from 'assets/roma.jpg';
-import facebookLogo from 'assets/facebook.png';
-import pangeyaLogo from 'assets/pangeya.png';
-import yutubeLogo from 'assets/ytube.png';
-import gphotosLogo from 'assets/gphotos.png';
 import embroderyImage from 'assets/embrodery.png';
-import { MapCategoryButton } from 'components/Buttons';
-import { HeadingH6, Body1 } from 'components/Typography';
+import { MapCategoryButton, BlackButton } from 'components/Buttons';
+import { HeadingH6, HeadingH5, Body1 } from 'components/Typography';
+import SocialLinks from 'components/SocialLinks';
 import VideosSlider from 'components/VideosSlider';
 import Header from 'components/Header';
 import { getVideos, useVideosDispatch } from 'components/useVideos';
@@ -24,7 +21,6 @@ import {
   StyledImage,
   HeroTextContent,
   HeroBottomMenu,
-  SocialImage,
   SocialButtonsContainer,
   CategoriesSliderContainer,
   LeftSideTextContent,
@@ -33,13 +29,15 @@ import {
   StyledMap,
   MapCategoryItem,
   StyledLocationIcon,
-  SocialImageYtube,
+  AboutContainer,
 } from './style';
 
 function MainPage({ topContainerRef }) {
   const [currentCategory, setCurrentCategory] = useState(null);
   const t = useTranslation();
   const strings = t(mainPage);
+
+  const history = useHistory();
 
   const categoriesRef = useRef(null);
   const videosDispatch = useVideosDispatch();
@@ -73,38 +71,18 @@ function MainPage({ topContainerRef }) {
           </HeroTextContent>
           <HeroBottomMenu>
             <SocialButtonsContainer>
-              <Link href="http://pangeya.com.ua/" target="_blank">
-                <Box width="60px" display="flex" justifyContent="center">
-                  <SocialImage src={pangeyaLogo} />
-                </Box>
-              </Link>
-              <Link
-                href="https://www.facebook.com/stinaecocenter"
-                target="_blank"
-              >
-                <Box width="60px" display="flex" justifyContent="center">
-                  <SocialImage src={facebookLogo} />
-                </Box>
-              </Link>
-              <Link
-                href="https://www.youtube.com/channel/UCS9k8Er19EUxesrVPbLtE_w/videos"
-                target="_blank"
-              >
-                <Box width="60px" display="flex" justifyContent="center">
-                  <SocialImageYtube src={yutubeLogo} />
-                </Box>
-              </Link>
-              <Link
-                href="https://photos.app.goo.gl/Mpfi1Xy9KbhnWj4V8"
-                target="_blank"
-              >
-                <Box width="60px" display="flex" justifyContent="center">
-                  <SocialImage src={gphotosLogo} />
-                </Box>
-              </Link>
+              <SocialLinks />
             </SocialButtonsContainer>
           </HeroBottomMenu>
         </ImageContainer>
+        <AboutContainer>
+          <HeadingH5>{strings.about}</HeadingH5>
+          <Box marginTop="50px">
+            <BlackButton onClick={() => history.push('/category/1')}>
+              <HeadingH5>{strings.navLink3}</HeadingH5>
+            </BlackButton>
+          </Box>
+        </AboutContainer>
         <CategoriesSliderContainer ref={categoriesRef}>
           <CategoriesSlider />
         </CategoriesSliderContainer>

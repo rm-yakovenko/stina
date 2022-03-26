@@ -48,28 +48,6 @@ export const SocialButtonsContainer = styled.div`
   justify-content: space-around;
 `;
 
-export const SocialImage = styled.img`
-  height: 45px;
-  width: auto;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    height: 55px;
-  }
-`;
-
-export const SocialImageYtube = styled.img`
-  height: 35px;
-  width: auto;
-  cursor: pointer;
-  transition: all 0.2s ease;
-
-  &:hover {
-    height: 45px;
-  }
-`;
-
 export const CategoriesSliderContainer = styled.div`
   padding: 20px;
   box-shadow: 0 15px 15px black;
@@ -236,4 +214,9 @@ export const StyledMapPopup = styled(Popup)`
   .leaflet-popup-content-wrapper {
     padding: 0;
   }
+`;
+
+export const AboutContainer = styled.div`
+  padding: 50px 20%;
+  text-align: center;
 `;
