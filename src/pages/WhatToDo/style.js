@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as colors from 'theme/colors';
+import Box from '@material-ui/core/Box';
 
 export const PageContainer = styled.div`
   padding-top: 90px;
@@ -7,11 +8,12 @@ export const PageContainer = styled.div`
 
 export const CategoryContainer = styled.div`
   position: relative;
+  overflow: hidden;
 `;
 
 export const CategoryImage = styled.img`
   width: 100%;
-  height: auto;
+  height: 'auto';
   display: block;
 `;
 
@@ -46,8 +48,15 @@ export const BottomContainer = styled.div`
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 230px;
+  height: 190px;
   background-color: rgba(255, 255, 255, 0.5);
+`;
+
+export const SwiperBox = styled(Box)`
+  height: 190px;
+  width: 190px;
+  display: flex;
+  align-items: center;
 `;
 
 export const SwiperContainer = styled.div`
@@ -100,8 +109,8 @@ export const ArrowImageRight = styled.img`
 `;
 
 export const StyledSwiperSlide = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 90%;
+  height: 90%;
   border-radius: 50%;
   background-image: ${(props) => `url(${props.$image})`};
   background-position: center;
@@ -113,8 +122,8 @@ export const StyledSwiperSlide = styled.div`
 `;
 
 export const StyledSwiperSlideInnerContainer = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,4 +151,14 @@ export const CategoryHeaderContainer = styled.div`
   background: ${colors.lightBlue};
   cursor: pointer;
   border-top: 1px solid lightGrey;
+`;
+
+export const SocialLinksContainer = styled.div`
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: ${colors.lightBlue};
+  border-top: 1px solid lightgrey;
+  box-shadow: 0 5px 5px grey;
 `;

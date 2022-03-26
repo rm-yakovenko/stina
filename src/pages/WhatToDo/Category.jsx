@@ -12,7 +12,7 @@ import {
 } from './style';
 
 function Category({ category, currentCategoryId, switchCategories }) {
-  const [isTextOpen, setIsTextOpen] = useState(false);
+  const [isTextOpen, setIsTextOpen] = useState(true);
   const position = category.id % 2 === 0 ? 'left' : 'right';
 
   const categoryHeaderRef = useRef();
@@ -23,24 +23,28 @@ function Category({ category, currentCategoryId, switchCategories }) {
 
   useEffect(() => {
     if (category.id === currentCategoryId) {
-      categoryHeaderRef.current.scrollIntoView();
+      categoryHeaderRef.current.scrollIntoView({ block: 'center' });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (category.id === currentCategoryId) {
+      setIsTextOpen(true);
     }
   }, [currentCategoryId]);
 
   return (
     <>
-      <CategoryHeaderContainer
-        onClick={() => switchCategories(category.id)}
-        ref={categoryHeaderRef}
-      >
+      <CategoryHeaderContainer onClick={() => switchCategories(category.id)}>
         <HeadingH5>{category.name}</HeadingH5>
       </CategoryHeaderContainer>
       <Collapse
         in={category.id === currentCategoryId}
-        timeout={{ enter: 500, exit: 0 }}
+        timeout={{ enter: 500, exit: 100 }}
       >
         <CategoryContainer>
           <CategoryImage src={category.imageBig} />
+          <Box position="absolute" top="50%" ref={categoryHeaderRef} />
           <CategoryTextContent $position={position}>
             <ButtonGrey $clicked={isTextOpen} onClick={toggleTextOpen}>
               <HeadingH5>{category.name}</HeadingH5>

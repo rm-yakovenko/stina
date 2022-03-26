@@ -40,7 +40,10 @@ function VideosSlider() {
               <StyledSwiperVideoSlide
                 onMouseEnter={() => setCurrentSlide(video)}
                 onMouseLeave={() => setCurrentSlide(null)}
-                onClick={() => {setCurrentModalVideo(video); toggleYuuTubeModal();}}
+                onClick={() => {
+                  setCurrentModalVideo(video);
+                  toggleYuuTubeModal();
+                }}
               >
                 <VideoImage
                   src={getVideoPreviewImg(video.url)}

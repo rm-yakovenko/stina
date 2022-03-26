@@ -5,7 +5,6 @@ import { HeadingH5, Body1 } from 'components/Typography';
 import Fade from '@material-ui/core/Fade';
 import useTranslation from 'hooks/useTranslation';
 import arrowImage from 'assets/arrow.png';
-import Box from '@material-ui/core/Box';
 
 import {
   SliderPrev,
@@ -17,6 +16,7 @@ import {
   StyledSwiperSlideInnerContainer,
   BottomContainer,
   ArticleDescription,
+  SwiperBox,
 } from './style';
 
 import 'swiper/swiper-bundle.min.css';
@@ -51,11 +51,7 @@ function ArticlesSlider({ articles, position, currentCategoryId }) {
         <Swiper loop slidesPerView={slidesPerView} ref={swiperRef}>
           {articles.map((article) => (
             <SwiperSlide key={article.id}>
-              <Box
-                height="230px"
-                width="200px"
-                display="flex"
-                alignItems="center"
+              <SwiperBox
                 onMouseEnter={() => setCurrentSlide(article)}
                 onMouseLeave={() => setCurrentSlide(null)}
               >
@@ -76,7 +72,7 @@ function ArticlesSlider({ articles, position, currentCategoryId }) {
                     )}
                   </StyledSwiperSlideInnerContainer>
                 </StyledSwiperSlide>
-              </Box>
+              </SwiperBox>
             </SwiperSlide>
           ))}
         </Swiper>
