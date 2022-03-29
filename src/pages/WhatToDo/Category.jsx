@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { HeadingH5, Body1 } from 'components/Typography';
 import Collapse from '@material-ui/core/Collapse';
 import Box from '@material-ui/core/Box';
@@ -7,19 +7,16 @@ import {
   CategoryContainer,
   CategoryImage,
   CategoryTextContent,
-  ButtonGrey,
   CategoryHeaderContainer,
 } from './style';
 
 function Category({ category, currentCategoryId, switchCategories }) {
-  const [isTextOpen, setIsTextOpen] = useState(true);
   const position = category.id % 2 === 0 ? 'left' : 'right';
+  const [isCategoryOpen, setCategoryOpen] = useState(
+    category.id === currentCategoryId,
+  );
 
   const categoryHeaderRef = useRef();
-
-  const toggleTextOpen = () => {
-    setIsTextOpen(!isTextOpen);
-  };
 
   useEffect(() => {
     if (category.id === currentCategoryId) {
@@ -27,33 +24,25 @@ function Category({ category, currentCategoryId, switchCategories }) {
     }
   }, []);
 
-  useEffect(() => {
-    if (category.id === currentCategoryId) {
-      setIsTextOpen(true);
-    }
-  }, [currentCategoryId]);
-
   return (
     <>
-      <CategoryHeaderContainer onClick={() => switchCategories(category.id)}>
+      <CategoryHeaderContainer
+        onClick={() => {
+          switchCategories(category.id);
+          setCategoryOpen(!isCategoryOpen);
+        }}
+        active={isCategoryOpen}
+      >
         <HeadingH5>{category.name}</HeadingH5>
       </CategoryHeaderContainer>
-      <Collapse
-        in={category.id === currentCategoryId}
-        timeout={{ enter: 500, exit: 100 }}
-      >
+      <Collapse in={isCategoryOpen} timeout={{ enter: 500, exit: 100 }}>
         <CategoryContainer>
           <CategoryImage src={category.imageBig} />
           <Box position="absolute" top="50%" ref={categoryHeaderRef} />
           <CategoryTextContent $position={position}>
-            <ButtonGrey $clicked={isTextOpen} onClick={toggleTextOpen}>
-              <HeadingH5>{category.name}</HeadingH5>
-            </ButtonGrey>
-            <Collapse in={isTextOpen}>
-              <Box padding="30px">
-                <Body1>{category.text}</Body1>
-              </Box>
-            </Collapse>
+            <Box padding="30px">
+              <Body1>{category.text}</Body1>
+            </Box>
           </CategoryTextContent>
           <ArticlesSlider
             articles={category.articles}

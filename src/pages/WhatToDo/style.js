@@ -148,9 +148,41 @@ export const CategoryHeaderContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 20px;
-  background: ${colors.lightBlue};
   cursor: pointer;
   border-top: 1px solid lightGrey;
+  position: relative;
+  color: ${(props) => (props.active ? 'white' : 'black')};
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: ${(props) => (props.active ? 'grey' : colors.lightBlue)};
+    z-index: -2;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: grey;
+    transition: all 0.3s;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: white;
+
+    &:after {
+      width: 100%;
+    }
+  }
 `;
 
 export const SocialLinksContainer = styled.div`
