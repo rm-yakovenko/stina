@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import romaImage from 'assets/roma.jpg';
-import embroderyImage from 'assets/embrodery.png';
+import embroderyImage from 'assets/embrodery.jpg';
 import { MapCategoryButton, BlackButton } from 'components/Buttons';
 import { HeadingH6, HeadingH5, Body1 } from 'components/Typography';
 import SocialLinks from 'components/SocialLinks';
@@ -15,6 +15,7 @@ import { mainPage } from 'strings/mainPage';
 import CategoriesSlider from './CategoriesSlider';
 import LeafletMap from './LeafletMap';
 import { useCategoriesMap } from './categoriesMap';
+import MiddleSlider from './MiddleSlider';
 import {
   MainPageContainer,
   ImageContainer,
@@ -86,14 +87,7 @@ function MainPage({ topContainerRef }) {
         <CategoriesSliderContainer ref={categoriesRef}>
           <CategoriesSlider />
         </CategoriesSliderContainer>
-        <ImageContainer>
-          <StyledImage src={embroderyImage} />
-          <LeftSideTextContent>
-            <Body1>
-              <i>{strings.embrText}</i>
-            </Body1>
-          </LeftSideTextContent>
-        </ImageContainer>
+        <MiddleSlider />
         <MapContainer>
           <StyledMap>
             <LeafletMap currentCategory={currentCategory} />

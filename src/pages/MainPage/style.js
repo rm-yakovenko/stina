@@ -92,6 +92,7 @@ export const LeftSideTextContent = styled.div`
   bottom: 0;
   width: 30%;
   padding: 30px;
+  z-index: 100;
   background-color: rgba(255, 255, 255, 0.9);
 `;
 
@@ -219,4 +220,23 @@ export const StyledMapPopup = styled(Popup)`
 export const AboutContainer = styled.div`
   padding: 50px 20%;
   text-align: center;
+`;
+
+export const SliderButtonsContainer = styled.div`
+  position: absolute;
+  display: flex;
+  padding: 30px;
+  top: 0;
+  right: 0;
+  z-index: 100;
+`;
+
+export const SwiperPaginationButton = styled.div`
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255);
+  opacity: ${(props) => (props.active ? 1 : 0.4)};
 `;
