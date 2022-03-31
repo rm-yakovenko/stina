@@ -42,8 +42,10 @@ export const MiddleContainerText = styled.div`
   right: 0;
   height: 100%;
   width: 35%;
-  background: ${colors.lightBlue};
-  opacity: 0.9;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 `;
 
 export const MozaicSlideContainer = styled.div``;
@@ -137,4 +139,24 @@ export const TeamHeadingContainer = styled.div`
   padding: 20px;
   text-transform: uppercase;
   box-sizing: border-box;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 30px 0;
+`;
+
+export const StyledSliderButton = styled.div`
+  width: 90%;
+  background: ${(props) => (props.active ? 'grey' : '#e1e1e1')};
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+  box-shadow: ${(props) => (props.active ? 'none' : '0 5px 5px grey')};
 `;

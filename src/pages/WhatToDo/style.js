@@ -26,7 +26,7 @@ export const CategoryTextContent = styled.div`
   left: ${(props) => props.$position === 'left' && 0};
   bottom: 0;
   width: 32%;
-  padding: 30px 10px;
+  padding: 20px 30px;
   background-color: rgba(255, 255, 255, 0.8);
   box-sizing: border-box;
 `;

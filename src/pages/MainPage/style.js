@@ -240,3 +240,16 @@ export const SwiperPaginationButton = styled.div`
   background-color: rgba(255, 255, 255);
   opacity: ${(props) => (props.active ? 1 : 0.4)};
 `;
+
+export const EcoCenterContainer = styled.div`
+  position: relative;
+`;
+
+export const EcoCenterText = styled.div`
+  position: absolute;
+  left: 0;
+  top: 25%;
+  width: 40%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+`;

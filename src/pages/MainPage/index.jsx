@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import Box from '@material-ui/core/Box';
 import romaImage from 'assets/roma.jpg';
-import embroderyImage from 'assets/embrodery.jpg';
+import ecocenterImage from 'assets/ecocenter.jpg';
 import { MapCategoryButton, BlackButton } from 'components/Buttons';
 import { HeadingH6, HeadingH5, Body1 } from 'components/Typography';
 import SocialLinks from 'components/SocialLinks';
@@ -31,6 +31,8 @@ import {
   MapCategoryItem,
   StyledLocationIcon,
   AboutContainer,
+  EcoCenterContainer,
+  EcoCenterText,
 } from './style';
 
 function MainPage({ topContainerRef }) {
@@ -108,6 +110,10 @@ function MainPage({ topContainerRef }) {
             ))}
           </MapCategoriesContainer>
         </MapContainer>
+        <EcoCenterContainer>
+          <StyledImage src={ecocenterImage} />
+          <EcoCenterText>Texts</EcoCenterText>
+        </EcoCenterContainer>
         <VideosSlider />
       </MainPageContainer>
     </>

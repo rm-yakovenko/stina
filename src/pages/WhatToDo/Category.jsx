@@ -40,7 +40,7 @@ function Category({ category, currentCategoryId, switchCategories }) {
           <CategoryImage src={category.imageBig} />
           <Box position="absolute" top="50%" ref={categoryHeaderRef} />
           <CategoryTextContent $position={position}>
-            <Box padding="30px">
+            <Box>
               <Body1>{category.text}</Body1>
             </Box>
           </CategoryTextContent>

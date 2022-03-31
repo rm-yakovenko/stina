@@ -37,6 +37,8 @@ import {
   StyledCollapse,
   TeamHeadingContainer,
   StyledCollapseBody,
+  ButtonsContainer,
+  StyledSliderButton,
 } from './style';
 
 function EcoCenter() {
@@ -83,30 +85,32 @@ function EcoCenter() {
           <Image src={hataImage} />
           <MiddleContainerText>
             Text Content
-            <button
-              type="button"
-              onClick={() => {
-                swiperRef.current.swiper.slideTo(2);
-              }}
-            >
-              2
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                swiperRef.current.swiper.slideTo(3);
-              }}
-            >
-              3
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                swiperRef.current.swiper.slideTo(4);
-              }}
-            >
-              4
-            </button>
+            <ButtonsContainer>
+              <StyledSliderButton
+                active={currentSlide === 1}
+                onClick={() => {
+                  swiperRef.current.swiper.slideTo(2);
+                }}
+              >
+                <HeadingH6>{strings.button1}</HeadingH6>
+              </StyledSliderButton>
+              <StyledSliderButton
+                active={currentSlide === 2}
+                onClick={() => {
+                  swiperRef.current.swiper.slideTo(3);
+                }}
+              >
+                <HeadingH6>{strings.button2}</HeadingH6>
+              </StyledSliderButton>
+              <StyledSliderButton
+                active={currentSlide === 3}
+                onClick={() => {
+                  swiperRef.current.swiper.slideTo(4);
+                }}
+              >
+                <HeadingH6>{strings.button3}</HeadingH6>
+              </StyledSliderButton>
+            </ButtonsContainer>
           </MiddleContainerText>
         </MiddleContainer>
         <SwiperContainer>
