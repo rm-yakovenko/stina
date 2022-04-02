@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Box from '@material-ui/core/Box';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
-import { HeadingH6, Subtitle1 } from 'components/Typography';
+import { Subtitle1 } from 'components/Typography';
 import { RoundIconButton } from 'components/Buttons';
 import useTranslation from 'hooks/useTranslation';
 import LocalTransportForm from './LocalTransportForm';

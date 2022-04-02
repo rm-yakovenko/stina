@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { HeadingH5, Body1 } from 'components/Typography';
+import stripeImage from 'assets/stripe.png';
 import Collapse from '@material-ui/core/Collapse';
 import Box from '@material-ui/core/Box';
 import ArticlesSlider from './ArticlesSlider';
@@ -50,6 +51,7 @@ function Category({ category, currentCategoryId, switchCategories }) {
             currentCategoryId={currentCategoryId}
           />
         </CategoryContainer>
+        <CategoryImage src={stripeImage} />
       </Collapse>
     </>
   );

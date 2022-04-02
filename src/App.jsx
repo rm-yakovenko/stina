@@ -1,15 +1,15 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import MainPage from 'pages/MainPage';
 import EcoCenter from 'pages/EcoCenter';
 import WhatToDo from 'pages/WhatToDo';
 import HowToGet from 'pages/HowToGet';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from 'react-router-dom';
-import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Admin from 'pages/Admin';
 import Login from 'pages/Login';
