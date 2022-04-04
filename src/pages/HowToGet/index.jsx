@@ -9,6 +9,7 @@ import useTransport, {
 } from 'components/useTransport';
 import useTranslation from 'hooks/useTranslation';
 import TransportSlider from './TransportSlider';
+import Variant from './Variant';
 import {
   PageContainer,
   TopContainer,
@@ -34,7 +35,11 @@ function HowToGet() {
     <PageContainer>
       <HeaderLight />
       <TopContainer>
-        <TopContainerTextSection>How to get works!</TopContainerTextSection>
+        <TopContainerTextSection>
+          {howToGetTransport.map((transport, index) => (
+            <Variant transport={transport} index={index} />
+          ))}
+        </TopContainerTextSection>
         <TopContainerImageSection>
           <TopImageContainer>
             <Image src={topImage} />

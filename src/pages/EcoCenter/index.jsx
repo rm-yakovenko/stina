@@ -90,6 +90,10 @@ function EcoCenter() {
                 active={currentSlide === 1}
                 onClick={() => {
                   swiperRef.current.swiper.slideTo(2);
+                  swiperRef.current.scrollIntoView({
+                    block: 'center',
+                    behavior: 'smooth',
+                  });
                 }}
               >
                 <HeadingH6>{strings.button1}</HeadingH6>
@@ -98,6 +102,10 @@ function EcoCenter() {
                 active={currentSlide === 2}
                 onClick={() => {
                   swiperRef.current.swiper.slideTo(3);
+                  swiperRef.current.scrollIntoView({
+                    block: 'center',
+                    behavior: 'smooth',
+                  });
                 }}
               >
                 <HeadingH6>{strings.button2}</HeadingH6>
@@ -106,6 +114,10 @@ function EcoCenter() {
                 active={currentSlide === 3}
                 onClick={() => {
                   swiperRef.current.swiper.slideTo(4);
+                  swiperRef.current.scrollIntoView({
+                    block: 'center',
+                    behavior: 'smooth',
+                  });
                 }}
               >
                 <HeadingH6>{strings.button3}</HeadingH6>

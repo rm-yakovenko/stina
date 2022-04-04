@@ -10,12 +10,12 @@ export const TopContainer = styled.div`
 `;
 
 export const TopContainerTextSection = styled.div`
-  width: 40%;
+  width: 30%;
   padding: 20px;
 `;
 
 export const TopContainerImageSection = styled.div`
-  width: 60%;
+  width: 70%;
 `;
 
 export const TopImageContainer = styled.div``;
@@ -100,4 +100,23 @@ export const SwiperContainer = styled.div`
 export const StyledImage = styled.img`
   width: 100%;
   height: 100%;
+`;
+
+export const StyledButton = styled.div`
+  width: 90%;
+  background: ${(props) => (props.active ? 'grey' : '#e1e1e1')};
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+  box-shadow: ${(props) => (props.active ? 'none' : '0 5px 5px grey')};
+  transition: all 0.3s ease;
+`;
+
+export const TextContainer = styled.div`
+  padding: 10px;
 `;
