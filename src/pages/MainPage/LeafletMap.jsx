@@ -79,14 +79,14 @@ function LeafletMap({ currentCategory }) {
       attributionControl
       zoomControl
       doubleClickZoom
-      scrollWheelZoom
+      scrollWheelZoom={false}
       dragging
       animate
       easeLinearity={0.35}
     >
       <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       {currentCategory &&
-        currentCategory.places.map((place) => (
+        currentCategory.places?.map((place) => (
           <Marker
             key={place.id}
             position={[place.lat, place.long]}

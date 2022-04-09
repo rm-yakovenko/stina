@@ -36,7 +36,11 @@ import {
 } from './style';
 
 function MainPage({ topContainerRef }) {
-  const [currentCategory, setCurrentCategory] = useState(null);
+  const categoriesMap = useCategoriesMap();
+  const defaultMapCategory = categoriesMap.find((cat) => cat.id === 9);
+
+  const [currentCategory, setCurrentCategory] = useState(defaultMapCategory);
+
   const t = useTranslation();
   const strings = t(mainPage);
 
@@ -58,8 +62,6 @@ function MainPage({ topContainerRef }) {
     getVideos(videosDispatch);
     getPlaces(placesDispatch);
   }, []);
-
-  const categoriesMap = useCategoriesMap();
 
   return (
     <>

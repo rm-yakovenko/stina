@@ -4,8 +4,7 @@ import Button from '@material-ui/core/Button';
 import * as colors from 'theme/colors';
 
 export const MapCategoryButton = styled(IconButton)`
-  background: ${(props) =>
-    props.selected ? colors.lightBlue : 'white'} !important;
+  background: ${(props) => (props.selected ? 'lightGrey' : 'white')} !important;
   margin-right: 10px !important;
   box-shadow: 0 5px 5px grey;
 `;
