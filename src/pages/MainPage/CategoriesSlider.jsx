@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { HeadingH5 } from 'components/Typography';
 import arrowImage from 'assets/arrow.png';
+import Box from '@material-ui/core/Box';
 import { useCategories } from './categories';
 
 import {
@@ -16,6 +17,7 @@ import {
   CategoryNameTop,
   CategoryNameBottom,
   CategoryLine,
+  CategoryNameMain,
 } from './style';
 
 import 'swiper/swiper-bundle.min.css';
@@ -35,18 +37,29 @@ function CategoriesSlider() {
         {categories.map((category) => (
           <SwiperSlide key={category.id}>
             <StyledSwiperSlide
-              onMouseEnter={() => setCurrentSlide(category.id)}
-              onMouseLeave={() => setCurrentSlide(null)}
               onClick={() => history.push(`/category/${category.id}`)}
             >
-              <CategoryNameTop isHover={currentSlide === category.id}>
-                <HeadingH5>{category.nameFirst}</HeadingH5>
-              </CategoryNameTop>
-              <CategoryImage src={category.image} />
-              <CategoryLine isHover={currentSlide === category.id} />
-              <CategoryNameBottom isHover={currentSlide === category.id}>
-                <HeadingH5>{category.nameSecond}</HeadingH5>
-              </CategoryNameBottom>
+              <Box
+                width="100%"
+                position="relative"
+                textAlign="center"
+                onMouseEnter={() => setCurrentSlide(category.id)}
+                onMouseLeave={() => setCurrentSlide(null)}
+              >
+                <CategoryNameTop isHover={currentSlide === category.id}>
+                  <HeadingH5>{category.nameFirst}</HeadingH5>
+                </CategoryNameTop>
+                <CategoryImage src={category.image} />
+                <CategoryLine isHover={currentSlide === category.id} />
+                <CategoryNameBottom isHover={currentSlide === category.id}>
+                  <HeadingH5>{category.nameSecond}</HeadingH5>
+                </CategoryNameBottom>
+              </Box>
+              {currentSlide !== category.id && (
+                <CategoryNameMain>
+                  <HeadingH5>{category.name}</HeadingH5>
+                </CategoryNameMain>
+              )}
             </StyledSwiperSlide>
           </SwiperSlide>
         ))}

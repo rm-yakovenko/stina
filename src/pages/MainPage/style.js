@@ -79,6 +79,7 @@ export const StyledSwiperSlide = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   cursor: pointer;
 `;
 
@@ -138,6 +139,7 @@ export const StyledLocationIcon = styled(LocationOnIcon)`
 
 export const SwiperContainer = styled.div`
   position: relative;
+  margin-bottom: 20px;
 `;
 
 export const SliderPrev = styled.div`
@@ -176,6 +178,8 @@ export const CategoryNameTop = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  overflow: hidden;
+  text-transform: uppercase;
   transition: height 0.5s;
 `;
 
@@ -189,12 +193,15 @@ export const CategoryNameBottom = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  overflow: hidden;
+  text-transform: uppercase;
   transition: height 0.5s;
 `;
 
 export const CategoryLine = styled.div`
   position: absolute;
   bottom: 50%;
+  left: 10%;
   height: 1px;
   width: 80%;
   background-color: ${(props) => (props.isHover ? 'grey' : 'transparent')};
@@ -252,4 +259,10 @@ export const EcoCenterText = styled.div`
   width: 40%;
   height: 50%;
   background-color: rgba(255, 255, 255, 0.8);
+`;
+
+export const CategoryNameMain = styled.div`
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 20px;
 `;
