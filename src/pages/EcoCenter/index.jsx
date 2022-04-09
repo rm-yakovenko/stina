@@ -7,6 +7,7 @@ import {
   HeadingH5,
   HeadingH6,
   Subtitle1Bold,
+  Body1,
 } from 'components/Typography';
 import useTranslation from 'hooks/useTranslation';
 import { ecoCenter } from 'strings/ecoCenter';
@@ -39,6 +40,9 @@ import {
   StyledCollapseBody,
   ButtonsContainer,
   StyledSliderButton,
+  TextContainer,
+  TextContainerRight,
+  StyledAttachmentIcon,
 } from './style';
 
 function EcoCenter() {
@@ -64,7 +68,21 @@ function EcoCenter() {
       <HeaderLight />
       <PageContainer>
         <TopContainer>
-          <TopContainerTextSection>EcoCenter works!</TopContainerTextSection>
+          <TopContainerTextSection>
+            <Box>
+              <Body1>{strings.mission}</Body1>
+            </Box>
+            <Box display="flex">
+              <StyledAttachmentIcon fontSize="large" />
+              <Body1>{strings.download} .pdf</Body1>
+            </Box>
+            <Box>
+              <Body1>{strings.contact1}</Body1>
+              <Body1>{strings.contact2}</Body1>
+              <Body1>{strings.contact3}</Body1>
+              <Body1>{strings.address}</Body1>
+            </Box>
+          </TopContainerTextSection>
           <TopContainerImageSection>
             <TopImageContainer>
               <Image src={topImage} />
@@ -84,45 +102,60 @@ function EcoCenter() {
         <MiddleContainer>
           <Image src={hataImage} />
           <MiddleContainerText>
-            Text Content
-            <ButtonsContainer>
-              <StyledSliderButton
-                active={currentSlide === 1}
-                onClick={() => {
-                  swiperRef.current.swiper.slideTo(2);
-                  swiperRef.current.scrollIntoView({
-                    block: 'center',
-                    behavior: 'smooth',
-                  });
-                }}
-              >
-                <HeadingH6>{strings.button1}</HeadingH6>
-              </StyledSliderButton>
-              <StyledSliderButton
-                active={currentSlide === 2}
-                onClick={() => {
-                  swiperRef.current.swiper.slideTo(3);
-                  swiperRef.current.scrollIntoView({
-                    block: 'center',
-                    behavior: 'smooth',
-                  });
-                }}
-              >
-                <HeadingH6>{strings.button2}</HeadingH6>
-              </StyledSliderButton>
-              <StyledSliderButton
-                active={currentSlide === 3}
-                onClick={() => {
-                  swiperRef.current.swiper.slideTo(4);
-                  swiperRef.current.scrollIntoView({
-                    block: 'center',
-                    behavior: 'smooth',
-                  });
-                }}
-              >
-                <HeadingH6>{strings.button3}</HeadingH6>
-              </StyledSliderButton>
-            </ButtonsContainer>
+            <TextContainerRight>
+              <Body1>{strings.founded}</Body1>
+            </TextContainerRight>
+            <TextContainer>
+              <Box>
+                <Body1>{strings.listHead}</Body1>
+                <Body1>&#8226; {strings.listItem1}</Body1>
+                <Body1>&#8226; {strings.listItem2}</Body1>
+                <Body1>&#8226; {strings.listItem3}</Body1>
+              </Box>
+            </TextContainer>
+            <Box>
+              <TextContainer>
+                <HeadingH5>{strings.buttonsHead}</HeadingH5>
+              </TextContainer>
+              <ButtonsContainer>
+                <StyledSliderButton
+                  active={currentSlide === 1}
+                  onClick={() => {
+                    swiperRef.current.swiper.slideTo(2);
+                    swiperRef.current.scrollIntoView({
+                      block: 'center',
+                      behavior: 'smooth',
+                    });
+                  }}
+                >
+                  <HeadingH6>{strings.button1}</HeadingH6>
+                </StyledSliderButton>
+                <StyledSliderButton
+                  active={currentSlide === 2}
+                  onClick={() => {
+                    swiperRef.current.swiper.slideTo(3);
+                    swiperRef.current.scrollIntoView({
+                      block: 'center',
+                      behavior: 'smooth',
+                    });
+                  }}
+                >
+                  <HeadingH6>{strings.button2}</HeadingH6>
+                </StyledSliderButton>
+                <StyledSliderButton
+                  active={currentSlide === 3}
+                  onClick={() => {
+                    swiperRef.current.swiper.slideTo(4);
+                    swiperRef.current.scrollIntoView({
+                      block: 'center',
+                      behavior: 'smooth',
+                    });
+                  }}
+                >
+                  <HeadingH6>{strings.button3}</HeadingH6>
+                </StyledSliderButton>
+              </ButtonsContainer>
+            </Box>
           </MiddleContainerText>
         </MiddleContainer>
         <SwiperContainer>

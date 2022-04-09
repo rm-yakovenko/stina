@@ -44,8 +44,9 @@ export const HeadingH6 = styled((props) => (
   font-weight: 500 !important;
 `;
 
-export const HeadingLinks = styled(Typography)`
-  font-size: 18px !important;
+export const HeadingLinks = styled((props) => (
+  <Typography variant="h6" {...props} />
+))`
   font-family: 'Raleway', sans-serif !important;
   font-weight: 600 !important;
 `;
@@ -71,8 +72,9 @@ export const Subtitle2 = styled((props) => (
   font-weight: 500 !important;
 `;
 
-export const Body1 = styled(Typography)`
-  font-size: 20px !important;
+export const Body1 = styled((props) => (
+  <Typography variant="body1" {...props} />
+))`
   font-family: 'Raleway', sans-serif !important;
   font-weight: 500 !important;
 `;

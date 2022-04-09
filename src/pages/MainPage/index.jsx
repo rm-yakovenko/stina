@@ -33,6 +33,7 @@ import {
   AboutContainer,
   EcoCenterContainer,
   EcoCenterText,
+  MapCategoryName,
 } from './style';
 
 function MainPage({ topContainerRef }) {
@@ -107,7 +108,9 @@ function MainPage({ topContainerRef }) {
                     onClick={() => setCurrentCategory(category)}
                   />
                 </MapCategoryButton>
-                <HeadingH6>{category.name}</HeadingH6>
+                <MapCategoryName>
+                  <HeadingH6>{category.name}</HeadingH6>
+                </MapCategoryName>
               </MapCategoryItem>
             ))}
           </MapCategoriesContainer>

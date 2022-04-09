@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import * as colors from 'theme/colors';
+import AttachmentIcon from '@material-ui/icons/Attachment';
 
 export const PageContainer = styled.div`
   padding-top: 90px;
@@ -11,7 +12,10 @@ export const TopContainer = styled.div`
 
 export const TopContainerTextSection = styled.div`
   width: 40%;
-  padding: 20px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const TopContainerImageSection = styled.div`
@@ -42,10 +46,12 @@ export const MiddleContainerText = styled.div`
   right: 0;
   height: 100%;
   width: 35%;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 20px 0;
 `;
 
 export const MozaicSlideContainer = styled.div``;
@@ -145,7 +151,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 30px 0;
+  padding: 10px 0;
 `;
 
 export const StyledSliderButton = styled.div`
@@ -159,4 +165,22 @@ export const StyledSliderButton = styled.div`
   border-bottom-left-radius: 10px;
   cursor: pointer;
   box-shadow: ${(props) => (props.active ? 'none' : '0 5px 5px grey')};
+`;
+
+export const TextContainer = styled.div`
+  padding-left: 6%;
+`;
+
+export const TextContainerRight = styled.div`
+  padding-right: 6%;
+  padding-left: 16%;
+  text-align: right;
+`;
+
+export const TextContainerTop = styled.div`
+  padding-left: 20px;
+`;
+
+export const StyledAttachmentIcon = styled(AttachmentIcon)`
+  transform: rotate(45deg);
 `;

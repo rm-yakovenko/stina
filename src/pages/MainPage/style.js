@@ -266,3 +266,7 @@ export const CategoryNameMain = styled.div`
   text-align: center;
   padding: 0 20px;
 `;
+
+export const MapCategoryName = styled.div`
+  text-transform: uppercase;
+`;
