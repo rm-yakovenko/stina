@@ -22,14 +22,23 @@ function TransportSlider({ transports }) {
   const t = useTranslation();
 
   const slidesPerView = transports.length > 5 ? 5 : transports.length;
-  console.log(slidesPerView);
 
   return (
     <SwiperContainer>
-      <Swiper loop slidesPerView={3} ref={swiperRef} direction="vertical">
+      <Swiper
+        loop
+        slidesPerView={slidesPerView}
+        ref={swiperRef}
+        direction="vertical"
+      >
         {transports.map((transport) => (
           <SwiperSlide key={transport.id}>
-            <Box display="flex" alignItems="center" padding="0 20px">
+            <Box
+              display="flex"
+              alignItems="center"
+              padding="0 20px"
+              height="100px"
+            >
               <Box
                 width="100px"
                 height="100px"
