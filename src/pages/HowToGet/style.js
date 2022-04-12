@@ -94,7 +94,7 @@ export const ArrowImageBottom = styled.img`
 export const SwiperContainer = styled.div`
   position: relative;
   height: 95%;
-  overflow: hidden;
+  overflow-y: scroll;
 `;
 
 export const StyledImage = styled.img`
