@@ -256,9 +256,11 @@ export const EcoCenterText = styled.div`
   position: absolute;
   left: 0;
   top: 25%;
-  width: 40%;
+  width: ${(props) => (props.visible ? '40%' : '0')};
   height: 50%;
+  overflow: hidden;
   background-color: rgba(255, 255, 255, 0.8);
+  transition: width 1s ease;
 `;
 
 export const CategoryNameMain = styled.div`

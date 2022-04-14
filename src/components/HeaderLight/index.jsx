@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import logo from 'assets/logo.png';
+import logoUk from 'assets/logo.png';
+import logoEng from 'assets/logo_eng.png';
 import useTranslation from 'hooks/useTranslation';
 import { mainPage } from 'strings/mainPage';
 import { HeadingLinks } from 'components/Typography';
@@ -15,6 +16,11 @@ import {
   StyledLink,
 } from './style';
 
+const logo = {
+  uk: logoUk,
+  en: logoEng,
+};
+
 function HeaderLight() {
   const t = useTranslation();
   const strings = t(mainPage);
@@ -24,7 +30,7 @@ function HeaderLight() {
   return (
     <HeaderContainer>
       <LogoContainer onClick={() => history.push('/')}>
-        <LogoImage src={logo} />
+        <LogoImage src={t(logo)} />
       </LogoContainer>
       <LinksContainer>
         <StyledLink to="/eco-center">

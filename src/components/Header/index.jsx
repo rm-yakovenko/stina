@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import logo from 'assets/logo.png';
+import logoUk from 'assets/logo.png';
+import logoEng from 'assets/logo_eng.png';
 import useTranslation from 'hooks/useTranslation';
 import { mainPage } from 'strings/mainPage';
 import { HeadingLinks } from 'components/Typography';
@@ -14,6 +15,11 @@ import {
   LinksContainer,
   StyledLink,
 } from './style';
+
+const logo = {
+  uk: logoUk,
+  en: logoEng,
+};
 
 function Header() {
   const [isScrolling, setScrolling] = useState(false);
@@ -40,7 +46,7 @@ function Header() {
         isScrolling={isScrolling}
         onClick={() => history.push('/')}
       >
-        <LogoImage src={logo} isScrolling={isScrolling} />
+        <LogoImage src={t(logo)} isScrolling={isScrolling} />
       </LogoContainer>
       <LinksContainer>
         <StyledLink to="/eco-center">

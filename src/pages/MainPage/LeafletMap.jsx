@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import PlaceCard from 'components/PlaceCard';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import markerIcon from 'assets/marker.svg';
@@ -70,6 +70,14 @@ const markersMap = {
 };
 
 function LeafletMap({ currentCategory }) {
+  const mapRef = useRef();
+
+  useEffect(() => {
+    if (mapRef.current) {
+      mapRef.current.setView([48.4525087, 28.4034291], 14);
+    }
+  }, [currentCategory]);
+
   return (
     <MapContainer
       center={[48.4525087, 28.4034291]}
@@ -83,6 +91,9 @@ function LeafletMap({ currentCategory }) {
       dragging
       animate
       easeLinearity={0.35}
+      whenCreated={(mapInstance) => {
+        mapRef.current = mapInstance;
+      }}
     >
       <TileLayer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
       {currentCategory &&

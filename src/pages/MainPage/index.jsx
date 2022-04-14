@@ -11,6 +11,7 @@ import Header from 'components/Header';
 import { getVideos, useVideosDispatch } from 'components/useVideos';
 import { getPlaces, usePlacesDispatch } from 'components/usePlaces';
 import useTranslation from 'hooks/useTranslation';
+import useOnScreen from 'hooks/useOnScreen';
 import { mainPage } from 'strings/mainPage';
 import CategoriesSlider from './CategoriesSlider';
 import LeafletMap from './LeafletMap';
@@ -46,6 +47,9 @@ function MainPage({ topContainerRef }) {
   const strings = t(mainPage);
 
   const history = useHistory();
+
+  const ecoCenterRef = useRef(null);
+  const visibleEcoCenter = useOnScreen(ecoCenterRef.current);
 
   const categoriesRef = useRef(null);
   const videosDispatch = useVideosDispatch();
@@ -115,9 +119,9 @@ function MainPage({ topContainerRef }) {
             ))}
           </MapCategoriesContainer>
         </MapContainer>
-        <EcoCenterContainer>
+        <EcoCenterContainer ref={ecoCenterRef}>
           <StyledImage src={ecocenterImage} />
-          <EcoCenterText>Texts</EcoCenterText>
+          <EcoCenterText visible={visibleEcoCenter}>Texts</EcoCenterText>
         </EcoCenterContainer>
         <VideosSlider />
       </MainPageContainer>

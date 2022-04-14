@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import VideosSlider from 'components/VideosSlider';
 import HeaderLight from 'components/HeaderLight';
 import SocialLinks from 'components/SocialLinks';
+import stripeImage from 'assets/stripe.png';
 import {
   HeadingH4,
   HeadingH5,
@@ -158,6 +159,7 @@ function EcoCenter() {
             </Box>
           </MiddleContainerText>
         </MiddleContainer>
+        <Image src={stripeImage} />
         <SwiperContainer>
           <Swiper loop slidesPerView={1} ref={swiperRef}>
             {slides.map((slide) => (
