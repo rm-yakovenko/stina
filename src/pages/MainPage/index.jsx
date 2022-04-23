@@ -8,8 +8,7 @@ import { HeadingH6, HeadingH5, Body1 } from 'components/Typography';
 import SocialLinks from 'components/SocialLinks';
 import VideosSlider from 'components/VideosSlider';
 import Header from 'components/Header';
-import { getVideos, useVideosDispatch } from 'components/useVideos';
-import { getPlaces, usePlacesDispatch } from 'components/usePlaces';
+import Spinner from 'components/Spinner';
 import useTranslation from 'hooks/useTranslation';
 import useOnScreen from 'hooks/useOnScreen';
 import { mainPage } from 'strings/mainPage';
@@ -25,7 +24,6 @@ import {
   HeroBottomMenu,
   SocialButtonsContainer,
   CategoriesSliderContainer,
-  LeftSideTextContent,
   MapContainer,
   MapCategoriesContainer,
   StyledMap,
@@ -41,6 +39,8 @@ function MainPage({ topContainerRef }) {
   const categoriesMap = useCategoriesMap();
   const defaultMapCategory = categoriesMap.find((cat) => cat.id === 9);
 
+  const [showLoader, setShowLoader] = useState(true);
+
   const [currentCategory, setCurrentCategory] = useState(defaultMapCategory);
 
   const t = useTranslation();
@@ -52,8 +52,7 @@ function MainPage({ topContainerRef }) {
   const visibleEcoCenter = useOnScreen(ecoCenterRef.current);
 
   const categoriesRef = useRef(null);
-  const videosDispatch = useVideosDispatch();
-  const placesDispatch = usePlacesDispatch();
+  const mainImageRef = useRef(null);
 
   const handleScroll = () => {
     //console.log(categoriesRef.current);
@@ -64,16 +63,18 @@ function MainPage({ topContainerRef }) {
   }, []);
 
   useEffect(() => {
-    getVideos(videosDispatch);
-    getPlaces(placesDispatch);
-  }, []);
+    mainImageRef.current.onload = () => {
+      setShowLoader(false);
+    };
+  }, [mainImageRef]);
 
   return (
     <>
+      {showLoader && <Spinner />}
       <Header topContainerRef={topContainerRef} />
       <MainPageContainer>
         <ImageContainer>
-          <StyledImage src={romaImage} />
+          <StyledImage src={romaImage} ref={mainImageRef} />
           <HeroTextContent>
             <Body1>
               <i>{strings.heroText}</i>

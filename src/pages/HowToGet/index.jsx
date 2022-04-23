@@ -1,13 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import HeaderLight from 'components/HeaderLight';
 import SocialLinks from 'components/SocialLinks';
 import topImage from 'assets/howtogethere.jpg';
-import { HeadingH5, HeadingH6, Body1 } from 'components/Typography';
+import { HeadingH5, HeadingH6 } from 'components/Typography';
 import Box from '@material-ui/core/Box';
-import useTransport, {
-  getLocalTransport,
-  getHowToGetTransport,
-} from 'components/useTransport';
+import useTransport from 'components/useTransport';
 import useTranslation from 'hooks/useTranslation';
 import { howtogetPage } from 'strings/howtoget';
 import TransportSlider from './TransportSlider';
@@ -29,11 +26,6 @@ function HowToGet() {
   const [{ localTransport, howToGetTransport }, dispatch] = useTransport();
   const t = useTranslation();
   const strings = t(howtogetPage);
-
-  useEffect(() => {
-    getLocalTransport(dispatch);
-    getHowToGetTransport(dispatch);
-  }, []);
 
   return (
     <PageContainer>

@@ -2,7 +2,8 @@ import React from 'react';
 import useTranslation from 'hooks/useTranslation';
 import { mainPage } from 'strings/mainPage';
 
-import { Link } from 'react-router-dom';
+import { Link as ReactLink } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
 import { Subtitle1 } from 'components/Typography';
 
 import {
@@ -28,6 +29,18 @@ function PlaceCard({ placeData, size }) {
     }
   };
 
+  const renderLink = (link) => {
+    if (link.includes('http') || link.includes('www')) {
+      return (
+        <Link href={link} target="_blank">
+          {strings.readMore}
+        </Link>
+      );
+    }
+
+    return <ReactLink to={link}>{strings.readMore}</ReactLink>;
+  };
+
   return (
     <MainContainer>
       <HeadingContainer>
@@ -38,9 +51,7 @@ function PlaceCard({ placeData, size }) {
       </ImageContainer>
       <LinkContainer>
         {placeData.pageLink && (
-          <Subtitle1>
-            <Link to={placeData.pageLink}>{strings.readMore}</Link>
-          </Subtitle1>
+          <Subtitle1>{renderLink(placeData.pageLink)}</Subtitle1>
         )}
       </LinkContainer>
     </MainContainer>

@@ -70,6 +70,7 @@ export const StyledDownIcon = styled(ArrowDropDownIcon)`
 
 export const ArticleThumbContainer = styled.div`
   width: 20%;
+  padding: 10px;
 `;
 
 export const StyledImage = styled.img`

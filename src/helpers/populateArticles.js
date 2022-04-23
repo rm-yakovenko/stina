@@ -9,3 +9,9 @@ export function populateCategories(categories, articles = []) {
   );
   return copyCategories;
 }
+
+export function selectArticlesForCategory(categoryId, articles = []) {
+  return articles.filter((article) =>
+    article.categories.includes(Number(categoryId)),
+  );
+}

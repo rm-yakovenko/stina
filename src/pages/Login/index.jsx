@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Formik, Form } from 'formik';
 import CustomTextField from 'components/CustomTextField';
 import HeaderLight from 'components/HeaderLight';
+import { Body1 } from 'components/Typography';
 import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import * as yup from 'yup';
@@ -16,12 +17,14 @@ const validationSchema = yup.object().shape({
 
 function Login() {
   const history = useHistory();
+  const [loginError, setLoginError] = useState(null);
   const handleFormSubmit = async (values) => {
     try {
+      setLoginError(null);
       await signIn(values.email, values.password);
       history.push('/gospodar');
     } catch (error) {
-      console.log(error);
+      setLoginError(error);
     }
   };
 
@@ -57,6 +60,11 @@ function Login() {
               </Form>
             )}
           </Formik>
+          {loginError && (
+            <Box marginTop="10px" color="red">
+              <Body1>*Invalid email or password</Body1>
+            </Box>
+          )}
         </FormContainer>
       </PageContainer>
     </>

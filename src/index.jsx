@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import Spinner from 'components/Spinner';
 import { VideosProvider } from 'components/useVideos';
 import { PlacesProvider } from 'components/usePlaces';
 import { ArticlesProvider } from 'components/useArticles';
@@ -14,23 +13,21 @@ import 'index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={<Spinner />}>
-      <Theme>
-        <TransportProvider>
-          <LocaleProvider>
-            <AuthProvider>
-              <ArticlesProvider>
-                <PlacesProvider>
-                  <VideosProvider>
-                    <App />
-                  </VideosProvider>
-                </PlacesProvider>
-              </ArticlesProvider>
-            </AuthProvider>
-          </LocaleProvider>
-        </TransportProvider>
-      </Theme>
-    </Suspense>
+    <Theme>
+      <TransportProvider>
+        <LocaleProvider>
+          <AuthProvider>
+            <ArticlesProvider>
+              <PlacesProvider>
+                <VideosProvider>
+                  <App />
+                </VideosProvider>
+              </PlacesProvider>
+            </ArticlesProvider>
+          </AuthProvider>
+        </LocaleProvider>
+      </TransportProvider>
+    </Theme>
   </React.StrictMode>,
   document.getElementById('root'),
 );
